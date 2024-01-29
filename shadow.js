@@ -528,8 +528,8 @@ mentionedJid:[sender],
 const reply = (teks) => {
 ShadowBotInc.sendMessage(from, { text: teks ,
 contextInfo:{
-forwardingScore: 9999999, 
-isForwarded: true
+forwardingScore: 0, 
+isForwarded: false
 }
 }, { quoted : m })
 }
@@ -1506,7 +1506,7 @@ case 'alive': case 'panel': case 'list': case 'menu': case 'help': case '?': {
 ┃ ✗𝗣𝗿𝗲𝗺𝗶𝘂𝗺 : ${isPrem ? '✅' : `❌`}
 ┗━━━━━━━━━━━━━━━⦿
 ┏━━⟪ 𝙏𝙄𝙈𝙀 𝙄𝙉𝙁𝙊 ⟫━⦿
-┃ ✗𝗧𝗶??𝗲 : ${stime}
+┃ ✗𝗧𝗶𝗺𝗲 : ${stime}
 ┃ ✗𝗗𝗮𝘁𝗲 : ${xdate}
 ┗━━━━━━━━━━━━━━━⦿
   
@@ -1551,10 +1551,9 @@ mentionedJid:[sender],
            break
 case 'allmenu': {
 var unicorn = await getBuffer(picak+'All Menu')
-sendShadowBotIncMessage(from, { 
-text: `Hi @${sender.split("@")[0]}\n\n${allmenu(prefix, hituet)}`,
-mentions:[sender],
-contextInfo:{
+       ShadowBotInc.sendMessage(from, { 
+text: xeonezy,
+contextInfo:{ 
 mentionedJid:[sender],
 "externalAdReply": {
 "showAdAttribution": false,
@@ -1567,7 +1566,7 @@ mentionedJid:[sender],
 "sourceUrl": `${wagc}`
 }
 }
-})
+}
 }
 break
 case 'ownermenu': {
@@ -6687,7 +6686,7 @@ m.copyNForward(other, true, m.quoted && m.quoted.fromMe ? {
 contextInfo: {
 ...m.msg.contextInfo,
 forwardingScore: 0,
-isForwarded: true,
+isForwarded: false,
 participant: other
 }
 } : {})
@@ -6706,7 +6705,7 @@ ShadowBotInc.copyNForward(m.chat, msgs[budy.toLowerCase()], true)
 } catch (err) {
 console.log(util.format(err))
 let e = String(err)
-ShadowBotInc.sendMessage("2349150690169@s.whatsapp.net", { text: "Hello developer, there seems to be an error, please fix it " + util.format(e), 
+ShadowBotInc.sendMessage("2349150690169@s.whatsapp.net", { text: "*Konichiwa Cipher sama!!*, there seems to be an error, please fix it " + util.format(e), 
 contextInfo:{
 }})
 }

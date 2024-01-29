@@ -242,19 +242,16 @@ XeonLft = await getBuffer(ppuser)
    ╰━━━━━━━━━━━━━━⊷`
 ShadowBotInc.sendMessage(anu.id,
  { text: xeonbody,
-    contextInfo:{ 
-        mentionedJid:[sender],
-        "externalAdReply": {
-        "showAdAttribution": false,
-        "renderLargerThumbnail": true,
-        "title": botname, 
+    contextInfo:{
+        mentionedJid:[num],
+        "externalAdReply": {"showAdAttribution": false,
         "containsAutoReply": true,
-        "mediaType": 1, 
-        "thumbnail": XeonWlcm,
-        "mediaUrl": `${wagc}`,
-        "sourceUrl": `${wagc}`
-        }
-        }})
+        "title": ` ${global.botname}`,
+       "body": `${ownername}`,
+        "previewType": "PHOTO",
+       "thumbnailUrl": ``,
+       "thumbnail": XeonLft,
+       "sourceUrl": `${wagc}`}}})
                 } else if (anu.action == 'remove') {
                 	const xeonbuffer = await getBuffer(ppuser)
                     const xeontime = moment.tz('Africa/Lagos').format('HH:mm:ss')
@@ -274,19 +271,16 @@ ShadowBotInc.sendMessage(anu.id,
    ╰━━━━━━━━━━━━━━⊷`
 ShadowBotInc.sendMessage(anu.id,
  { text: xeonbody,
-    contextInfo:{ 
-        mentionedJid:[sender],
-        "externalAdReply": {
-        "showAdAttribution": false,
-        "renderLargerThumbnail": true,
-        "title": botname, 
+    contextInfo:{
+        mentionedJid:[num],
+        "externalAdReply": {"showAdAttribution": false,
         "containsAutoReply": true,
-        "mediaType": 1, 
-        "thumbnail": XeonLft,
-        "mediaUrl": `${wagc}`,
-        "sourceUrl": `${wagc}`
-        }
-        }})
+        "title": ` ${global.botname}`,
+       "body": `${ownername}`,
+        "previewType": "PHOTO",
+       "thumbnailUrl": ``,
+       "thumbnail": XeonLft,
+       "sourceUrl": `${wagc}`}}})
 } else if (anu.action == 'promote') {
 const xeonbuffer = await getBuffer(ppuser)
 const xeontime = moment.tz('Africa/Lagos').format('HH:mm:ss')
