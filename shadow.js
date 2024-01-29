@@ -1541,8 +1541,8 @@ mentionedJid:[sender],
 "title": botname, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": fs.readFileSync("./Assets/Media2/theme/cheemspic.jpg"),
-"mediaUrl": `${wagc}`,
+"thumbnail": fs.readFileSync("./Assets/Media2/theme/h.jpg"),
+"mediaUrl":  `${wagc}`,
 "sourceUrl": `${wagc}`
 }
 }
@@ -1551,9 +1551,10 @@ mentionedJid:[sender],
            break
 case 'allmenu': {
 var unicorn = await getBuffer(picak+'All Menu')
-       ShadowBotInc.sendMessage(from, { 
-text: xeonezy,
-contextInfo:{ 
+sendShadowBotIncMessage(from, { 
+text: `Hi @${sender.split("@")[0]}\n\n${allmenu(prefix, hituet)}`,
+mentions:[sender],
+contextInfo:{
 mentionedJid:[sender],
 "externalAdReply": {
 "showAdAttribution": false,
@@ -1561,12 +1562,12 @@ mentionedJid:[sender],
 "title": botname, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": fs.readFileSync("./Assets/Media2/theme/cheemspic.jpg"),
+"thumbnail": fs.readFileSync("./Assets/Media2/theme/e.jpg"),
 "mediaUrl": `${wagc}`,
 "sourceUrl": `${wagc}`
 }
 }
-}
+}, { quoted: m })
 }
 break
 case 'ownermenu': {
@@ -1582,7 +1583,7 @@ mentionedJid:[sender],
 "title": botname, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": fs.readFileSync("./Assets/Media2/theme/cheemspic.jpg"),
+"thumbnail": fs.readFileSync("./Assets/Media2/theme/KAGENOU.jpg"),
 "mediaUrl": `${wagc}`,
 "sourceUrl": `${wagc}`
 }
@@ -1603,7 +1604,7 @@ mentionedJid:[sender],
 "title": botname, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": fs.readFileSync("./Assets/Media2/theme/cheemspic.jpg"),
+"thumbnail": fs.readFileSync("./Assets/Media2/theme/r.jpg"),
 "mediaUrl": `${wagc}`,
 "sourceUrl": `${wagc}`
 }
@@ -1624,7 +1625,7 @@ mentionedJid:[sender],
 "title": botname, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": fs.readFileSync("./Assets/Media2/theme/cheemspic.jpg"),
+"thumbnail": fs.readFileSync("./Assets/Media2/theme/x.jpg"),
 "mediaUrl": `${wagc}`,
 "sourceUrl": `${wagc}`
 }
@@ -1645,7 +1646,7 @@ mentionedJid:[sender],
 "title": botname, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": fs.readFileSync("./Assets/Media2/theme/cheemspic.jpg"),
+"thumbnail": fs.readFileSync("./Assets/Media2/theme/Cid.jpg"),
 "mediaUrl": `${wagc}`,
 "sourceUrl": `${wagc}`
 }

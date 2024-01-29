@@ -33,9 +33,9 @@ global.botname = "Shadow"
 global.ownernumber = '2349150690169'
 global.ownername = 'Cipher'
 global.ownerNumber = ["2349150690169@s.whatsapp.net"]
-global.ownerweb = "https://youtube.com/@DGXeon"
-global.websitex = "https://youtu.be/L_SIk59QeAU"
-global.wagc = "https://chat.whatsapp.com/Dc2qyVeK8JbJq8Gr3U1pKH"
+global.ownerweb = "https://github.com/Cipher0071"
+global.websitex = "https://github.com/Cipher0071"
+global.wagc = "https://chat.whatsapp.com/FCfSLTySyqz1c7YPJD2KSm"
 global.themeemoji = '🪀'
 global.wm = "Shadow Bot Inc."
 global.botscript = 'https://github.com/Cipher0071/shadow' //script link
@@ -47,10 +47,10 @@ global.sessionName = 'session'
 global.hituet = 0
 
 //media target
-global.thum = fs.readFileSync("./Assets/Media2/theme/cheemspic.jpg") //ur thumb pic
-global.log0 = fs.readFileSync("./Assets/Media2/theme/cheemspic.jpg") //ur logo pic
-global.err4r = fs.readFileSync("./Assets/Media2/theme/cheemspic.jpg") //ur error pic
-global.thumb = fs.readFileSync("./Assets/Media2/theme/cheemspic.jpg") //ur thumb pic
+global.thum = fs.readFileSync("./Assets/Media2/theme/h.jpg") //ur thumb pic
+global.log0 = fs.readFileSync("./Assets/Media2/theme/g.jpg") //ur logo pic
+global.err4r = fs.readFileSync("./Assets/Media2/theme/e.jpg") //ur error pic
+global.thumb = fs.readFileSync("./Assets/Media2/theme/r.jpg") //ur thumb pic
 global.defaultpp = 'https://i.pinimg.com/originals/cc/fe/af/ccfeaff53e2fada3120942721cfab185.jpg' //default pp wa
 
 //menu image maker
