@@ -112,7 +112,7 @@ try{
             console.log(chalk.yellow(`\n\n               ${chalk.bold.blue(`[ ${botname} ]`)}\n\n`))
             console.log(color(`< ================================================== >`, 'cyan'))
             console.log(color(`${themeemoji} GITHUB: Cipher0071 `,'magenta'))
-            console.log(color(`${themeemoji} WA NUMBER: ${owner}`,'magenta'))
+            console.log(color(`${themeemoji} WA NUMBER: 2349150690169`,'magenta'))
             console.log(color(`${themeemoji} CREDIT: ${wm}\n`,'magenta'))
 		}
 	
@@ -331,7 +331,7 @@ console.log(err)
             return msg?.message
         }
         return {
-            conversation: "Cheems Bot Here"
+            conversation: "Shadow Bot Here"
         }
     }
     ShadowBotInc.ev.on('messages.update', async chatUpdate => {
