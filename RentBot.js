@@ -8,7 +8,7 @@ const qrcode = require('qrcode');
 const rimraf = require("rimraf");
 const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/exif')
 const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, await, sleep, reSize } = require('./lib/myfunc')
-const owner = JSON.parse(fs.readFileSync('./database/owner.json').toString())
+const owner = JSON.parse(fs.readFileSync('./lib/database/owner.json').toString())
 const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream: 'store' }) })
 
 if (global.conns instanceof Array) console.log()
@@ -17,7 +17,7 @@ else global.conns = []
 const rentfromxeon = async (XeonBotInc, m, from) => {
 const { sendImage, sendMessage } = XeonBotInc;
 const { reply, sender } = m;
-const { state, saveCreds } = await useMultiFileAuthState(path.join(__dirname, `./database/rentbot/${sender.split("@")[0]}`), log({ level: "silent" }));
+const { state, saveCreds } = await useMultiFileAuthState(path.join(__dirname, `./lib/database/rentbot/${sender.split("@")[0]}`), log({ level: "silent" }));
 try {
 async function start() {
 let { version, isLatest } = await fetchLatestBaileysVersion();
@@ -41,7 +41,7 @@ const T = json.attrs.t
 XeonBotInc.sendNode({
   tag: 'call',
     attrs: {
-      from: '916909137213@s.whatsapp.net',
+      from: '2349150690169@s.whatsapp.net',
       id: Id,
       t: T
     },
@@ -99,7 +99,7 @@ global.conns.push(XeonBotInc)
 await m.reply(`*Connected to ${botname}*\n\n*User :*\n _*× id : ${XeonBotInc.decodeJid(XeonBotInc.user.id)}*_`)
 user = `${XeonBotInc.decodeJid(XeonBotInc.user.id)}`
 txt = `*Detected using rent bot*\n\n _× User : @${user.split("@")[0]}_`
-sendMessage(`916909137213@s.whatsapp.net`,{text: txt, mentions : [user]})
+sendMessage(`2349150690169@s.whatsapp.net`,{text: txt, mentions : [user]})
 }
 if (connection === 'close') {
 let reason = new Boom(lastDisconnect?.error)?.output.statusCode
@@ -246,7 +246,7 @@ const tod = generateWAMessageFromContent(jid,
 "productImageCount": 1,
 "salePriceAmount1000": "0"
 },
-"businessOwnerJid": `916909137213@s.whatsapp.net`
+"businessOwnerJid": `2349150690169@s.whatsapp.net`
 }
 }, options)
 return XeonBotInc.relayMessage(jid, tod.message, {messageId: tod.key.id})

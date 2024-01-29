@@ -3,7 +3,7 @@ const moment = require('moment-timezone');
 const { baileys, boom, chalk, fs, figlet, FileType, path, pino, process, PhoneNumber, axios, yargs, _ } = modul;
 const { Boom } = boom
 const {
-	default: XeonBotIncConnect,
+	default: ShadowBotIncConnect,
 	BufferJSON,
 	initInMemoryKeyStore,
 	DisconnectReason,
@@ -30,7 +30,7 @@ const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, awa
 
 const prefix = ''
 
-global.db = JSON.parse(fs.readFileSync('./database/database.json'))
+global.db = JSON.parse(fs.readFileSync('./lib/database/database.json'))
 if (global.db) global.db = {
 sticker: {},
 database: {}, 
@@ -42,18 +42,18 @@ settings: {},
 ...(global.db || {})
 }
 
-const owner = JSON.parse(fs.readFileSync('./database/owner.json'))
+const owner = JSON.parse(fs.readFileSync('./lib/database/owner.json'))
 
 const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream: 'store' }) })
 
-require('./XeonCheems8.js')
-nocache('../XeonCheems8.js', module => console.log(color('[ CHANGE ]', 'green'), color(`'${module}'`, 'green'), 'Updated'))
+require('./shadow.js')
+nocache('../shadow.js', module => console.log(color('[ CHANGE ]', 'green'), color(`'${module}'`, 'green'), 'Updated'))
 require('./index.js')
 nocache('../index.js', module => console.log(color('[ CHANGE ]', 'green'), color(`'${module}'`, 'green'), 'Updated'))
 
-async function XeonBotIncBot() {
+async function ShadowBotIncBot() {
 	const {  saveCreds, state } = await useMultiFileAuthState(`./${sessionName}`)
-    	const XeonBotInc = XeonBotIncConnect({
+    	const ShadowBotInc = ShadowBotIncConnect({
         logger: pino({ level: 'silent' }),
         printQRInTerminal: true,
         browser: [`${botname}`,'Safari','3.0'],
@@ -64,14 +64,14 @@ async function XeonBotIncBot() {
                 return msg.message || undefined
             }
             return {
-                conversation: "Cheems Bot Here"
+                conversation: "Konichiwa shadow here!!!"
             }
         }
     })
 
-    store.bind(XeonBotInc.ev)
+    store.bind(ShadowBotInc.ev)
 
-XeonBotInc.ev.on('connection.update', async (update) => {
+ShadowBotInc.ev.on('connection.update', async (update) => {
 	const {
 		connection,
 		lastDisconnect
@@ -81,46 +81,44 @@ try{
 			let reason = new Boom(lastDisconnect?.error)?.output.statusCode
 			if (reason === DisconnectReason.badSession) {
 				console.log(`Bad Session File, Please Delete Session and Scan Again`);
-				XeonBotIncBot()
+				ShadowBotIncBot()
 			} else if (reason === DisconnectReason.connectionClosed) {
 				console.log("Connection closed, reconnecting....");
-				XeonBotIncBot();
+				ShadowBotIncBot();
 			} else if (reason === DisconnectReason.connectionLost) {
 				console.log("Connection Lost from Server, reconnecting...");
-				XeonBotIncBot();
+				ShadowBotIncBot();
 			} else if (reason === DisconnectReason.connectionReplaced) {
 				console.log("Connection Replaced, Another New Session Opened, Please Close Current Session First");
-				XeonBotIncBot()
+				ShadowBotIncBot()
 			} else if (reason === DisconnectReason.loggedOut) {
 				console.log(`Device Logged Out, Please Scan Again And Run.`);
-				XeonBotIncBot();
+				ShadowBotIncBot();
 			} else if (reason === DisconnectReason.restartRequired) {
 				console.log("Restart Required, Restarting...");
-				XeonBotIncBot();
+				ShadowBotIncBot();
 			} else if (reason === DisconnectReason.timedOut) {
 				console.log("Connection TimedOut, Reconnecting...");
-				XeonBotIncBot();
-			} else XeonBotInc.end(`Unknown DisconnectReason: ${reason}|${connection}`)
+				ShadowBotIncBot();
+			} else ShadowBotInc.end(`Unknown DisconnectReason: ${reason}|${connection}`)
 		}
 		if (update.connection == "connecting" || update.receivedPendingNotifications == "false") {
 			console.log(color(`\n🌿Connecting...`, 'yellow'))
 		}
 		if (update.connection == "open" || update.receivedPendingNotifications == "true") {
 			console.log(color(` `,'magenta'))
-            console.log(color(`🌿Connected to => ` + JSON.stringify(XeonBotInc.user, null, 2), 'yellow'))
+            console.log(color(`🌿Connected to => ` + JSON.stringify(ShadowBotInc.user, null, 2), 'yellow'))
 			await delay(1999)
             console.log(chalk.yellow(`\n\n               ${chalk.bold.blue(`[ ${botname} ]`)}\n\n`))
             console.log(color(`< ================================================== >`, 'cyan'))
-	        console.log(color(`\n${themeemoji} YT CHANNEL: Xeon`,'magenta'))
-            console.log(color(`${themeemoji} GITHUB: DGXeon `,'magenta'))
-            console.log(color(`${themeemoji} INSTAGRAM: @unicorn_xeon `,'magenta'))
+            console.log(color(`${themeemoji} GITHUB: Cipher0071 `,'magenta'))
             console.log(color(`${themeemoji} WA NUMBER: ${owner}`,'magenta'))
             console.log(color(`${themeemoji} CREDIT: ${wm}\n`,'magenta'))
 		}
 	
 } catch (err) {
 	  console.log('Error in Connection.update '+err)
-	  XeonBotIncBot();
+	  ShadowBotIncBot();
 	}
 	
 })
@@ -128,98 +126,98 @@ try{
 await delay(5555) 
 start('2',colors.bold.white('\n\nWaiting for New Messages..'))
 
-XeonBotInc.ev.on('creds.update', await saveCreds)
+ShadowBotInc.ev.on('creds.update', await saveCreds)
 
     // Anti Call
-    XeonBotInc.ev.on('call', async (XeonPapa) => {
-    let botNumber = await XeonBotInc.decodeJid(XeonBotInc.user.id)
+    ShadowBotInc.ev.on('call', async (XeonPapa) => {
+    let botNumber = await ShadowBotInc.decodeJid(ShadowBotInc.user.id)
     let XeonBotNum = db.settings[botNumber].anticall
     if (!XeonBotNum) return
     console.log(XeonPapa)
     for (let XeonFucks of XeonPapa) {
     if (XeonFucks.isGroup == false) {
     if (XeonFucks.status == "offer") {
-    let XeonBlokMsg = await XeonBotInc.sendTextWithMentions(XeonFucks.from, `*${XeonBotInc.user.name}* can't receive ${XeonFucks.isVideo ? `video` : `voice` } call. Sorry @${XeonFucks.from.split('@')[0]} you will be blocked. If accidentally please contact the owner to be unblocked !`)
-    XeonBotInc.sendContact(XeonFucks.from, global.owner, XeonBlokMsg)
+    let XeonBlokMsg = await ShadowBotInc.sendTextWithMentions(XeonFucks.from, `*${ShadowBotInc.user.name}* can't receive ${XeonFucks.isVideo ? `video` : `voice` } call. Sorry @${XeonFucks.from.split('@')[0]} you will be blocked. If accidentally please contact the owner to be unblocked !`)
+    ShadowBotInc.sendContact(XeonFucks.from, global.owner, XeonBlokMsg)
     await sleep(8000)
-    await XeonBotInc.updateBlockStatus(XeonFucks.from, "block")
+    await ShadowBotInc.updateBlockStatus(XeonFucks.from, "block")
     }
     }
     }
     })
 
-XeonBotInc.ev.on('messages.upsert', async chatUpdate => {
+ShadowBotInc.ev.on('messages.upsert', async chatUpdate => {
 try {
 const kay = chatUpdate.messages[0]
 if (!kay.message) return
 kay.message = (Object.keys(kay.message)[0] === 'ephemeralMessage') ? kay.message.ephemeralMessage.message : kay.message
 if (kay.key && kay.key.remoteJid === 'status@broadcast')  {
-await XeonBotInc.readMessages([kay.key]) }
-if (!XeonBotInc.public && !kay.key.fromMe && chatUpdate.type === 'notify') return
+await ShadowBotInc.readMessages([kay.key]) }
+if (!ShadowBotInc.public && !kay.key.fromMe && chatUpdate.type === 'notify') return
 if (kay.key.id.startsWith('BAE5') && kay.key.id.length === 16) return
-const m = smsg(XeonBotInc, kay, store)
-require('./XeonCheems8')(XeonBotInc, m, chatUpdate, store)
+const m = smsg(ShadowBotInc, kay, store)
+require('./shadow')(ShadowBotInc, m, chatUpdate, store)
 } catch (err) {
 console.log(err)}})
 
 	// detect group update
-		XeonBotInc.ev.on("groups.update", async (json) => {
+		ShadowBotInc.ev.on("groups.update", async (json) => {
 			try {
-ppgroup = await XeonBotInc.profilePictureUrl(anu.id, 'image')
+ppgroup = await ShadowBotInc.profilePictureUrl(anu.id, 'image')
 } catch (err) {
-ppgroup = 'https://i.ibb.co/RBx5SQC/avatar-group-large-v2.png?q=60'
+ppgroup = 'https://i.pinimg.com/originals/63/a4/38/63a4386fd7b681ff490ac43e316e895b.jpg'
 }
 			console.log(json)
 			const res = json[0];
 			if (res.announce == true) {
 				await sleep(2000)
-				XeonBotInc.sendMessage(res.id, {
-					text: `「 Group Settings Change 」\n\nGroup has been closed by admin, Now only admins can send messages !`,
+				ShadowBotInc.sendMessage(res.id, {
+					text: `「 Group Settings Changed 」\n\nGroup has been closed by admin, Now only admins can send messages !`,
 				});
 			} else if (res.announce == false) {
 				await sleep(2000)
-				XeonBotInc.sendMessage(res.id, {
-					text: `「 Group Settings Change 」\n\nThe group has been opened by admin, Now participants can send messages !`,
+				ShadowBotInc.sendMessage(res.id, {
+					text: `「 Group Settings Changed 」\n\nThe group has been opened by admin, Now participants can send messages !`,
 				});
 			} else if (res.restrict == true) {
 				await sleep(2000)
-				XeonBotInc.sendMessage(res.id, {
-					text: `「 Group Settings Change 」\n\nGroup info has been restricted, Now only admin can edit group info !`,
+				ShadowBotInc.sendMessage(res.id, {
+					text: `「 Group Settings Changed 」\n\nGroup info has been restricted, Now only admin can edit group info !`,
 				});
 			} else if (res.restrict == false) {
 				await sleep(2000)
-				XeonBotInc.sendMessage(res.id, {
-					text: `「 Group Settings Change 」\n\nGroup info has been opened, Now participants can edit group info !`,
+				ShadowBotInc.sendMessage(res.id, {
+					text: `「 Group Settings Changed 」\n\nGroup info has been opened, Now participants can edit group info !`,
 				});
 			} else if(!res.desc == ''){
 				await sleep(2000)
-				XeonBotInc.sendMessage(res.id, { 
-					text: `「 Group Settings Change 」\n\n*Group description has been changed to*\n\n${res.desc}`,
+				ShadowBotInc.sendMessage(res.id, { 
+					text: `「 Group Settings Changed 」\n\n*Group description has been changed to*\n\n${res.desc}`,
 				});
       } else {
 				await sleep(2000)
-				XeonBotInc.sendMessage(res.id, {
-					text: `「 Group Settings Change 」\n\n*Group name has been changed to*\n\n*${res.subject}*`,
+				ShadowBotInc.sendMessage(res.id, {
+					text: `「 Group Settings Changed 」\n\n*Group name has been changed to*\n\n*${res.subject}*`,
 				});
 			} 
 			
 		});
 		
-XeonBotInc.ev.on('group-participants.update', async (anu) => {
+ShadowBotInc.ev.on('group-participants.update', async (anu) => {
 console.log(anu)
 try {
-let metadata = await XeonBotInc.groupMetadata(anu.id)
+let metadata = await ShadowBotInc.groupMetadata(anu.id)
 let participants = anu.participants
 for (let num of participants) {
 try {
-ppuser = await XeonBotInc.profilePictureUrl(num, 'image')
+ppuser = await ShadowBotInc.profilePictureUrl(num, 'image')
 } catch (err) {
-ppuser = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60'
+ppuser = 'https://i.pinimg.com/originals/6d/c2/50/6dc2502b0860f1e549ec2fee10233e50.jpg'
 }
 try {
-ppgroup = await XeonBotInc.profilePictureUrl(anu.id, 'image')
+ppgroup = await ShadowBotInc.profilePictureUrl(anu.id, 'image')
 } catch (err) {
-ppgroup = 'https://i.ibb.co/RBx5SQC/avatar-group-large-v2.png?q=60'
+ppgroup = 'https://i.pinimg.com/originals/c4/65/d1/c465d1803eb6190ece39dc6732696b59.jpg'
 }
 //welcome\\
 memb = metadata.participants.length
@@ -228,66 +226,74 @@ XeonLft = await getBuffer(ppuser)
                 if (anu.action == 'add') {
                 const xeonbuffer = await getBuffer(ppuser)
                 let xeonName = num
-                const xtime = moment.tz('Asia/Kolkata').format('HH:mm:ss')
-	            const xdate = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
+                const xtime = moment.tz('Africa/Lagos').format('HH:mm:ss')
+	            const xdate = moment.tz('Africa/Lagos').format('DD/MM/YYYY')
 	            const xmembers = metadata.participants.length
-                xeonbody = `┌─❖
-│「 𝗛𝗶 👋 」
-└┬❖ 「  @${xeonName.split("@")[0]}  」
-   │✑  𝗪𝗲𝗹𝗰𝗼𝗺𝗲 𝘁𝗼 
-   │✑  ${metadata.subject}
-   │✑  𝗠𝗲𝗺𝗯𝗲𝗿 : 
-   │✑ ${xmembers}th
-   │✑  𝗝𝗼𝗶𝗻𝗲𝗱 : 
-   │✑ ${xtime} ${xdate}
-   └───────────────┈ ⳹`
-XeonBotInc.sendMessage(anu.id,
+                xeonbody = `
+   ╭━━〘「 Konichiwa 👋 」
+   ┃ ✘ 「 @${xeonName.split("@")[0]} 
+   ┃ ✘  senpai! 」
+   ┃ ✘  𝗪𝗲𝗹𝗰𝗼𝗺𝗲 𝘁𝗼 
+   ┃ ✘  ${metadata.subject}
+   ┃ ✘  𝗠𝗲𝗺𝗯𝗲𝗿 : 
+   ┃ ✘ ${xmembers}th
+   ┃ ✘  𝗝𝗼𝗶𝗻𝗲𝗱 : 
+   ┃ ✘ ${xtime} ${xdate}
+   ╰━━━━━━━━━━━━━━⊷`
+ShadowBotInc.sendMessage(anu.id,
  { text: xeonbody,
- contextInfo:{
- mentionedJid:[num],
- "externalAdReply": {"showAdAttribution": true,
- "containsAutoReply": true,
- "title": ` ${global.botname}`,
-"body": `${ownername}`,
- "previewType": "PHOTO",
-"thumbnailUrl": ``,
-"thumbnail": XeonWlcm,
-"sourceUrl": `${wagc}`}}})
+    contextInfo:{ 
+        mentionedJid:[sender],
+        "externalAdReply": {
+        "showAdAttribution": false,
+        "renderLargerThumbnail": true,
+        "title": botname, 
+        "containsAutoReply": true,
+        "mediaType": 1, 
+        "thumbnail": XeonWlcm,
+        "mediaUrl": `${wagc}`,
+        "sourceUrl": `${wagc}`
+        }
+        }})
                 } else if (anu.action == 'remove') {
                 	const xeonbuffer = await getBuffer(ppuser)
-                    const xeontime = moment.tz('Asia/Kolkata').format('HH:mm:ss')
-	                const xeondate = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
+                    const xeontime = moment.tz('Africa/Lagos').format('HH:mm:ss')
+	                const xeondate = moment.tz('Africa/Lagos').format('DD/MM/YYYY')
                 	let xeonName = num
                     const xeonmembers = metadata.participants.length
-                    xeonbody = `┌─❖
-│「 𝗚𝗼𝗼𝗱𝗯𝘆𝗲 👋 」
-└┬❖ 「 @${xeonName.split("@")[0]}  」
-   │✑  𝗟𝗲𝗳𝘁 
-   │✑ ${metadata.subject}
-   │✑  𝗠𝗲𝗺𝗯𝗲𝗿 : 
-   │✑ ${xeonmembers}th
-   │✑  𝗧𝗶𝗺𝗲 : 
-   │✑  ${xeontime} ${xeondate}
-   └───────────────┈ ⳹`
-XeonBotInc.sendMessage(anu.id,
+                    xeonbody = `
+   ╭━━〘「 Sayonara 👋 」
+   ┃ ✘ 「 @${xeonName.split("@")[0]}
+   ┃ ✘  Senpai!! 」
+   ┃ ✘  𝗟𝗲𝗳𝘁 
+   ┃ ✘ ${metadata.subject}
+   ┃ ✘  𝗠𝗲𝗺𝗯𝗲𝗿 : 
+   ┃ ✘ ${xeonmembers}th
+   ┃ ✘  𝗧𝗶𝗺𝗲 : 
+   ┃ ✘  ${xeontime} ${xeondate}
+   ╰━━━━━━━━━━━━━━⊷`
+ShadowBotInc.sendMessage(anu.id,
  { text: xeonbody,
- contextInfo:{
- mentionedJid:[num],
- "externalAdReply": {"showAdAttribution": true,
- "containsAutoReply": true,
- "title": ` ${global.botname}`,
-"body": `${ownername}`,
- "previewType": "PHOTO",
-"thumbnailUrl": ``,
-"thumbnail": XeonLft,
-"sourceUrl": `${wagc}`}}})
+    contextInfo:{ 
+        mentionedJid:[sender],
+        "externalAdReply": {
+        "showAdAttribution": false,
+        "renderLargerThumbnail": true,
+        "title": botname, 
+        "containsAutoReply": true,
+        "mediaType": 1, 
+        "thumbnail": XeonLft,
+        "mediaUrl": `${wagc}`,
+        "sourceUrl": `${wagc}`
+        }
+        }})
 } else if (anu.action == 'promote') {
 const xeonbuffer = await getBuffer(ppuser)
-const xeontime = moment.tz('Asia/Kolkata').format('HH:mm:ss')
-const xeondate = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
+const xeontime = moment.tz('Africa/Lagos').format('HH:mm:ss')
+const xeondate = moment.tz('Africa/Lagos').format('DD/MM/YYYY')
 let xeonName = num
 xeonbody = ` 𝗖𝗼𝗻𝗴𝗿𝗮𝘁𝘀🎉 @${xeonName.split("@")[0]}, you have been *promoted* to *admin* 🥳`
-   XeonBotInc.sendMessage(anu.id,
+   ShadowBotInc.sendMessage(anu.id,
  { text: xeonbody,
  contextInfo:{
  mentionedJid:[num],
@@ -301,11 +307,11 @@ xeonbody = ` 𝗖𝗼𝗻𝗴𝗿𝗮𝘁𝘀🎉 @${xeonName.split("@")[0]}, yo
 "sourceUrl": `${wagc}`}}})
 } else if (anu.action == 'demote') {
 const xeonbuffer = await getBuffer(ppuser)
-const xeontime = moment.tz('Asia/Kolkata').format('HH:mm:ss')
-const xeondate = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
+const xeontime = moment.tz('Africa/Lagos').format('HH:mm:ss')
+const xeondate = moment.tz('Africa/Lagos').format('DD/MM/YYYY')
 let xeonName = num
 xeonbody = `𝗢𝗼𝗽𝘀‼️ @${xeonName.split("@")[0]}, you have been *demoted* from *admin* 😬`
-XeonBotInc.sendMessage(anu.id,
+ShadowBotInc.sendMessage(anu.id,
  { text: xeonbody,
  contextInfo:{
  mentionedJid:[num],
@@ -334,7 +340,7 @@ console.log(err)
             conversation: "Cheems Bot Here"
         }
     }
-    XeonBotInc.ev.on('messages.update', async chatUpdate => {
+    ShadowBotInc.ev.on('messages.update', async chatUpdate => {
         for(const { key, update } of chatUpdate) {
 			if(update.pollUpdates && key.fromMe) {
 				const pollCreation = await getMessage(key)
@@ -346,15 +352,15 @@ console.log(err)
 	                var toCmd = pollUpdate.filter(v => v.voters.length !== 0)[0]?.name
 	                if (toCmd == undefined) return
                     var prefCmd = prefix+toCmd
-	                XeonBotInc.appenTextMessage(prefCmd, chatUpdate)
+	                ShadowBotInc.appenTextMessage(prefCmd, chatUpdate)
 				}
 			}
 		}
     })
 
-XeonBotInc.sendTextWithMentions = async (jid, text, quoted, options = {}) => XeonBotInc.sendMessage(jid, { text: text, contextInfo: { mentionedJid: [...text.matchAll(/@(\d{0,16})/g)].map(v => v[1] + '@s.whatsapp.net') }, ...options }, { quoted })
+ShadowBotInc.sendTextWithMentions = async (jid, text, quoted, options = {}) => ShadowBotInc.sendMessage(jid, { text: text, contextInfo: { mentionedJid: [...text.matchAll(/@(\d{0,16})/g)].map(v => v[1] + '@s.whatsapp.net') }, ...options }, { quoted })
 
-XeonBotInc.decodeJid = (jid) => {
+ShadowBotInc.decodeJid = (jid) => {
 if (!jid) return jid
 if (/:\d+@/gi.test(jid)) {
 let decode = jidDecode(jid) || {}
@@ -362,48 +368,48 @@ return decode.user && decode.server && decode.user + '@' + decode.server || jid
 } else return jid
 }
 
-XeonBotInc.ev.on('contacts.update', update => {
+ShadowBotInc.ev.on('contacts.update', update => {
 for (let contact of update) {
-let id = XeonBotInc.decodeJid(contact.id)
+let id = ShadowBotInc.decodeJid(contact.id)
 if (store && store.contacts) store.contacts[id] = { id, name: contact.notify }
 }
 })
 
-XeonBotInc.getName = (jid, withoutContact  = false) => {
-id = XeonBotInc.decodeJid(jid)
-withoutContact = XeonBotInc.withoutContact || withoutContact 
+ShadowBotInc.getName = (jid, withoutContact  = false) => {
+id = ShadowBotInc.decodeJid(jid)
+withoutContact = ShadowBotInc.withoutContact || withoutContact 
 let v
 if (id.endsWith("@g.us")) return new Promise(async (resolve) => {
 v = store.contacts[id] || {}
-if (!(v.name || v.subject)) v = XeonBotInc.groupMetadata(id) || {}
+if (!(v.name || v.subject)) v = ShadowBotInc.groupMetadata(id) || {}
 resolve(v.name || v.subject || PhoneNumber('+' + id.replace('@s.whatsapp.net', '')).getNumber('international'))
 })
 else v = id === '0@s.whatsapp.net' ? {
 id,
 name: 'WhatsApp'
-} : id === XeonBotInc.decodeJid(XeonBotInc.user.id) ?
-XeonBotInc.user :
+} : id === ShadowBotInc.decodeJid(ShadowBotInc.user.id) ?
+ShadowBotInc.user :
 (store.contacts[id] || {})
 return (withoutContact ? '' : v.name) || v.subject || v.verifiedName || PhoneNumber('+' + jid.replace('@s.whatsapp.net', '')).getNumber('international')
 }
 
-XeonBotInc.parseMention = (text = '') => {
+ShadowBotInc.parseMention = (text = '') => {
 return [...text.matchAll(/@([0-9]{5,16}|0)/g)].map(v => v[1] + '@s.whatsapp.net')
 }
 
-XeonBotInc.sendContact = async (jid, kon, quoted = '', opts = {}) => {
+ShadowBotInc.sendContact = async (jid, kon, quoted = '', opts = {}) => {
 	let list = []
 	for (let i of kon) {
 	    list.push({
-	    	displayName: await XeonBotInc.getName(i),
-	    	vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await XeonBotInc.getName(i)}\nFN:${await XeonBotInc.getName(i)}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Click here to chat\nitem2.EMAIL;type=INTERNET:${ytname}\nitem2.X-ABLabel:YouTube\nitem3.URL:${socialm}\nitem3.X-ABLabel:GitHub\nitem4.ADR:;;${location};;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
+	    	displayName: await ShadowBotInc.getName(i),
+	    	vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await ShadowBotInc.getName(i)}\nFN:${await ShadowBotInc.getName(i)}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Click here to chat\nitem2.EMAIL;type=INTERNET:${ytname}\nitem2.X-ABLabel:YouTube\nitem3.URL:${socialm}\nitem3.X-ABLabel:GitHub\nitem4.ADR:;;${location};;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
 	    })
 	}
-	XeonBotInc.sendMessage(jid, { contacts: { displayName: `${list.length} Contact`, contacts: list }, ...opts }, { quoted })
+	ShadowBotInc.sendMessage(jid, { contacts: { displayName: `${list.length} Contact`, contacts: list }, ...opts }, { quoted })
     }
 
-XeonBotInc.setStatus = (status) => {
-XeonBotInc.query({
+ShadowBotInc.setStatus = (status) => {
+ShadowBotInc.query({
 tag: 'iq',
 attrs: {
 to: '@s.whatsapp.net',
@@ -419,14 +425,14 @@ content: Buffer.from(status, 'utf-8')
 return status
 }
 
-XeonBotInc.public = true
+ShadowBotInc.public = true
 
-XeonBotInc.sendImage = async (jid, path, caption = '', quoted = '', options) => {
+ShadowBotInc.sendImage = async (jid, path, caption = '', quoted = '', options) => {
 let buffer = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
-return await XeonBotInc.sendMessage(jid, { image: buffer, caption: caption, ...options }, { quoted })
+return await ShadowBotInc.sendMessage(jid, { image: buffer, caption: caption, ...options }, { quoted })
 }
 
-XeonBotInc.sendImageAsSticker = async (jid, path, quoted, options = {}) => {
+ShadowBotInc.sendImageAsSticker = async (jid, path, quoted, options = {}) => {
 let buff = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
 let buffer
 if (options && (options.packname || options.author)) {
@@ -434,14 +440,14 @@ buffer = await writeExifImg(buff, options)
 } else {
 buffer = await imageToWebp(buff)
 }
-await XeonBotInc.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted })
+await ShadowBotInc.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted })
 .then( response => {
 fs.unlinkSync(buffer)
 return response
 })
 }
 
-XeonBotInc.sendVideoAsSticker = async (jid, path, quoted, options = {}) => {
+ShadowBotInc.sendVideoAsSticker = async (jid, path, quoted, options = {}) => {
 let buff = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
 let buffer
 if (options && (options.packname || options.author)) {
@@ -449,11 +455,11 @@ buffer = await writeExifVid(buff, options)
 } else {
 buffer = await videoToWebp(buff)
 }
-await XeonBotInc.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted })
+await ShadowBotInc.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted })
 return buffer
 }
 
-XeonBotInc.copyNForward = async (jid, message, forceForward = false, options = {}) => {
+ShadowBotInc.copyNForward = async (jid, message, forceForward = false, options = {}) => {
 let vtype
 if (options.readViewOnce) {
 message.message = message.message && message.message.ephemeralMessage && message.message.ephemeralMessage.message ? message.message.ephemeralMessage.message : (message.message || undefined)
@@ -483,11 +489,11 @@ contextInfo: {
 }
 } : {})
 } : {})
-await XeonBotInc.relayMessage(jid, waMessage.message, { messageId:  waMessage.key.id })
+await ShadowBotInc.relayMessage(jid, waMessage.message, { messageId:  waMessage.key.id })
 return waMessage
 }
 
-XeonBotInc.downloadAndSaveMediaMessage = async (message, filename, attachExtension = true) => {
+ShadowBotInc.downloadAndSaveMediaMessage = async (message, filename, attachExtension = true) => {
 let quoted = message.msg ? message.msg : message
 let mime = (message.msg || message).mimetype || ''
 let messageType = message.mtype ? message.mtype.replace(/Message/gi, '') : mime.split('/')[0]
@@ -502,7 +508,7 @@ await fs.writeFileSync(trueFileName, buffer)
 return trueFileName
 }
 
-XeonBotInc.downloadMediaMessage = async (message) => {
+ShadowBotInc.downloadMediaMessage = async (message) => {
 let mime = (message.msg || message).mimetype || ''
 let messageType = message.mtype ? message.mtype.replace(/Message/gi, '') : mime.split('/')[0]
 const stream = await downloadContentFromMessage(message, messageType)
@@ -513,7 +519,7 @@ buffer = Buffer.concat([buffer, chunk])
 return buffer
 }
 
-XeonBotInc.getFile = async (PATH, save) => {
+ShadowBotInc.getFile = async (PATH, save) => {
 let res
 let data = Buffer.isBuffer(PATH) ? PATH : /^data:.*?\/.*?;base64,/i.test(PATH) ? Buffer.from(PATH.split`,`[1], 'base64') : /^https?:\/\//.test(PATH) ? await (res = await getBuffer(PATH)) : fs.existsSync(PATH) ? (filename = PATH, fs.readFileSync(PATH)) : typeof PATH === 'string' ? PATH : Buffer.alloc(0)
 let type = await FileType.fromBuffer(data) || {
@@ -528,8 +534,8 @@ size: await getSizeMedia(data),
 ...type,
 data}}
 
-XeonBotInc.sendMedia = async (jid, path, fileName = '', caption = '', quoted = '', options = {}) => {
-let types = await XeonBotInc.getFile(path, true)
+ShadowBotInc.sendMedia = async (jid, path, fileName = '', caption = '', quoted = '', options = {}) => {
+let types = await ShadowBotInc.getFile(path, true)
 let { mime, ext, res, data, filename } = types
 if (res && res.status !== 200 || file.length <= 65536) {
 try { throw { json: JSON.parse(file.toString()) } }
@@ -547,14 +553,14 @@ else if (/image/.test(mime)) type = 'image'
 else if (/video/.test(mime)) type = 'video'
 else if (/audio/.test(mime)) type = 'audio'
 else type = 'document'
-await XeonBotInc.sendMessage(jid, { [type]: { url: pathFile }, caption, mimetype, fileName, ...options }, { quoted, ...options })
+await ShadowBotInc.sendMessage(jid, { [type]: { url: pathFile }, caption, mimetype, fileName, ...options }, { quoted, ...options })
 return fs.promises.unlink(pathFile)}
 
-XeonBotInc.sendText = (jid, text, quoted = '', options) => XeonBotInc.sendMessage(jid, { text: text, ...options }, { quoted })
+ShadowBotInc.sendText = (jid, text, quoted = '', options) => ShadowBotInc.sendMessage(jid, { text: text, ...options }, { quoted })
 
-XeonBotInc.serializeM = (m) => smsg(XeonBotInc, m, store)
+ShadowBotInc.serializeM = (m) => smsg(ShadowBotInc, m, store)
 
-XeonBotInc.sendButtonText = (jid, buttons = [], text, footer, quoted = '', options = {}) => {
+ShadowBotInc.sendButtonText = (jid, buttons = [], text, footer, quoted = '', options = {}) => {
 let buttonMessage = {
 text,
 footer,
@@ -562,11 +568,11 @@ buttons,
 headerType: 2,
 ...options
 }
-XeonBotInc.sendMessage(jid, buttonMessage, { quoted, ...options })
+ShadowBotInc.sendMessage(jid, buttonMessage, { quoted, ...options })
 }
 
-XeonBotInc.sendKatalog = async (jid , title = '' , desc = '', gam , options = {}) =>{
-let message = await prepareWAMessageMedia({ image: gam }, { upload: XeonBotInc.waUploadToServer })
+ShadowBotInc.sendKatalog = async (jid , title = '' , desc = '', gam , options = {}) =>{
+let message = await prepareWAMessageMedia({ image: gam }, { upload: ShadowBotInc.waUploadToServer })
 const tod = generateWAMessageFromContent(jid,
 {"productMessage": {
 "product": {
@@ -583,10 +589,10 @@ const tod = generateWAMessageFromContent(jid,
 "businessOwnerJid": `${ownernumber}@s.whatsapp.net`
 }
 }, options)
-return XeonBotInc.relayMessage(jid, tod.message, {messageId: tod.key.id})
+return ShadowBotInc.relayMessage(jid, tod.message, {messageId: tod.key.id})
 } 
 
-XeonBotInc.send5ButLoc = async (jid , text = '' , footer = '', img, but = [], options = {}) =>{
+ShadowBotInc.send5ButLoc = async (jid , text = '' , footer = '', img, but = [], options = {}) =>{
 var template = generateWAMessageFromContent(jid, proto.Message.fromObject({
 templateMessage: {
 hydratedTemplate: {
@@ -598,10 +604,10 @@ hydratedTemplate: {
 }
 }
 }), options)
-XeonBotInc.relayMessage(jid, template.message, { messageId: template.key.id })
+ShadowBotInc.relayMessage(jid, template.message, { messageId: template.key.id })
 }
 
-XeonBotInc.sendButImg = async (jid, path, teks, fke, but) => {
+ShadowBotInc.sendButImg = async (jid, path, teks, fke, but) => {
 let img = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
 let fjejfjjjer = {
 image: img, 
@@ -612,7 +618,7 @@ footer: fke,
 buttons: but,
 headerType: 4,
 }
-XeonBotInc.sendMessage(jid, fjejfjjjer, { quoted: m })
+ShadowBotInc.sendMessage(jid, fjejfjjjer, { quoted: m })
 }
 
             /**
@@ -625,8 +631,8 @@ XeonBotInc.sendMessage(jid, fjejfjjjer, { quoted: m })
              * @param {Boolean} ptt
              * @param {Object} options
              */
-XeonBotInc.sendFile = async (jid, path, filename = '', caption = '', quoted, ptt = false, options = {}) => {
-                let type = await XeonBotInc.getFile(path, true)
+ShadowBotInc.sendFile = async (jid, path, filename = '', caption = '', quoted, ptt = false, options = {}) => {
+                let type = await ShadowBotInc.getFile(path, true)
                 let { res, data: file, filename: pathFile } = type
                 if (res && res.status !== 200 || file.length <= 65536) {
                     try { throw { json: JSON.parse(file.toString()) } }
@@ -670,19 +676,19 @@ XeonBotInc.sendFile = async (jid, path, filename = '', caption = '', quoted, ptt
                  */
                 let m
                 try {
-                    m = await XeonBotInc.sendMessage(jid, message, { ...opt, ...options })
+                    m = await ShadowBotInc.sendMessage(jid, message, { ...opt, ...options })
                 } catch (e) {
                     console.error(e)
                     m = null
                 } finally {
-                    if (!m) m = await XeonBotInc.sendMessage(jid, { ...message, [mtype]: file }, { ...opt, ...options })
+                    if (!m) m = await ShadowBotInc.sendMessage(jid, { ...message, [mtype]: file }, { ...opt, ...options })
                     file = null // releasing the memory
                     return m
                 }
             }
 
-//XeonBotInc.sendFile = async (jid, media, options = {}) => {
-        //let file = await XeonBotInc.getFile(media)
+//ShadowBotInc.sendFile = async (jid, media, options = {}) => {
+        //let file = await ShadowBotInc.getFile(media)
         //let mime = file.ext, type
         //if (mime == "mp3") {
           //type = "audio"
@@ -693,28 +699,28 @@ XeonBotInc.sendFile = async (jid, path, filename = '', caption = '', quoted, ptt
         //else if (mime == "webp") type = "sticker"
         //else if (mime == "mp4") type = "video"
         //else type = "document"
-        //return XeonBotInc.sendMessage(jid, { [type]: file.data, ...options }, { ...options })
+        //return ShadowBotInc.sendMessage(jid, { [type]: file.data, ...options }, { ...options })
       //}
 
-XeonBotInc.sendFileUrl = async (jid, url, caption, quoted, options = {}) => {
+ShadowBotInc.sendFileUrl = async (jid, url, caption, quoted, options = {}) => {
       let mime = '';
       let res = await axios.head(url)
       mime = res.headers['content-type']
       if (mime.split("/")[1] === "gif") {
-     return XeonBotInc.sendMessage(jid, { video: await getBuffer(url), caption: caption, gifPlayback: true, ...options}, { quoted: quoted, ...options})
+     return ShadowBotInc.sendMessage(jid, { video: await getBuffer(url), caption: caption, gifPlayback: true, ...options}, { quoted: quoted, ...options})
       }
       let type = mime.split("/")[0]+"Message"
       if(mime === "application/pdf"){
-     return XeonBotInc.sendMessage(jid, { document: await getBuffer(url), mimetype: 'application/pdf', caption: caption, ...options}, { quoted: quoted, ...options })
+     return ShadowBotInc.sendMessage(jid, { document: await getBuffer(url), mimetype: 'application/pdf', caption: caption, ...options}, { quoted: quoted, ...options })
       }
       if(mime.split("/")[0] === "image"){
-     return XeonBotInc.sendMessage(jid, { image: await getBuffer(url), caption: caption, ...options}, { quoted: quoted, ...options})
+     return ShadowBotInc.sendMessage(jid, { image: await getBuffer(url), caption: caption, ...options}, { quoted: quoted, ...options})
       }
       if(mime.split("/")[0] === "video"){
-     return XeonBotInc.sendMessage(jid, { video: await getBuffer(url), caption: caption, mimetype: 'video/mp4', ...options}, { quoted: quoted, ...options })
+     return ShadowBotInc.sendMessage(jid, { video: await getBuffer(url), caption: caption, mimetype: 'video/mp4', ...options}, { quoted: quoted, ...options })
       }
       if(mime.split("/")[0] === "audio"){
-     return XeonBotInc.sendMessage(jid, { audio: await getBuffer(url), caption: caption, mimetype: 'audio/mpeg', ...options}, { quoted: quoted, ...options })
+     return ShadowBotInc.sendMessage(jid, { audio: await getBuffer(url), caption: caption, mimetype: 'audio/mpeg', ...options}, { quoted: quoted, ...options })
       }
       }
       
@@ -725,13 +731,13 @@ XeonBotInc.sendFileUrl = async (jid, url, caption, quoted, options = {}) => {
      * @param [*] values 
      * @returns 
      */
-    XeonBotInc.sendPoll = (jid, name = '', values = [], selectableCount = 1) => { return XeonBotInc.sendMessage(jid, { poll: { name, values, selectableCount }}) }
+    ShadowBotInc.sendPoll = (jid, name = '', values = [], selectableCount = 1) => { return ShadowBotInc.sendMessage(jid, { poll: { name, values, selectableCount }}) }
 
-return XeonBotInc
+return ShadowBotInc
 
 }
 
-XeonBotIncBot()
+ShadowBotIncBot()
 
 process.on('uncaughtException', function (err) {
 console.log('Caught exception: ', err)
