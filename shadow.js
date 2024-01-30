@@ -3363,7 +3363,7 @@ await fs.unlinkSync(pl.path)
 break
 case "ytmp3": case "ytaudio": //credit: Ray Senpai â¤ï¸ https://github.com/EternityBots/Nezuko
 const xeonaudp3 = require('./lib/ytdl2')
-if (args.length < 1 || !isUrl(text) || !xeonaudp3.isYTUrl(text)) return replygcxeon(`Where's the yt link?\nExample: ${prefix + command} https://youtube.com/shorts/YQf-vMjDuKY?feature=share`)
+if (args.length < 1 || !isUrl(text) || !xeonaudp3.isYTUrl(text)) return replygcxeon(`Please provide me *link*, Baka!\nExample: ${prefix + command} https://youtube.com/shorts/YQf-vMjDuKY?feature=share`)
 const audio=await xeonaudp3.mp3(text)
 await ShadowBotInc.sendMessage(m.chat,{
     audio: fs.readFileSync(audio.path),
@@ -3383,7 +3383,7 @@ await fs.unlinkSync(audio.path)
 break
 case 'ytmp4': case 'ytvideo': {
 const xeonvidoh = require('./lib/ytdl2')
-if (args.length < 1 || !isUrl(text) || !xeonvidoh.isYTUrl(text)) replygcxeon(`Where is the link??\n\nExample : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`)
+if (args.length < 1 || !isUrl(text) || !xeonvidoh.isYTUrl(text)) replygcxeon(`Please provide me *link*, Baka!?\n\nExample : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`)
 const vid=await xeonvidoh.mp4(text)
 const ytc=`
 *${themeemoji}Tittle:* ${vid.title}
@@ -3397,13 +3397,13 @@ await ShadowBotInc.sendMessage(m.chat,{
 }
 break
 case 'ytvxxx': case 'ytmp4xxx': case 'mp4xxx':{
-if (!text) return replygcxeon('Enter the link!!!')
+if (!text) return replygcxeon('Please provide me *link*, Baka!')
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 downloadMp4(text)
 }
 break
 case 'ytaxxx': case 'ytmp3xxx': case 'mp3xxx':{
-if (!text) return replygcxeon('Enter the link!!!')
+if (!text) return replygcxeon('Please provide me *link*, Baka!')
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 downloadMp3(text)
 }
@@ -3411,7 +3411,7 @@ break
 case 'getcase':
 if (!ShadowTheCreator) return reply('*⚠️ This Command is exclusively for My Owner. The one who holds the key to my existence*')
 const getCase = (cases) => {
-return "case"+`'${cases}'`+fs.readFileSync("XeonCheems7.js").toString().split('case \''+cases+'\'')[1].split("break")[0]+"break"
+return "case"+`'${cases}'`+fs.readFileSync("shadow.js").toString().split('case \''+cases+'\'')[1].split("break")[0]+"break"
 }
 replygcxeon(`${getCase(q)}`)
 break
@@ -3772,7 +3772,7 @@ https://chat.whatsapp.com/${response}
        `
 ShadowBotInc.sendMessage(m.chat, { text:teks, mentions: await ShadowBotInc.parseMention(teks)}, {quoted:m})
 } catch {
-replygcxeon("Error!")
+replygcxeon("*Uhh, I seem to have encountered an error in my grand design.*")
 }
 }
 break
@@ -4958,7 +4958,7 @@ const wall = new AnimeWallpaper()
             .catch(() => null)
 const i = Math.floor(Math.random() * wallpaper.length)    
             await ShadowBotInc.sendMessage(m.chat, { caption: `*Query :* ${q}`, image: {url:wallpaper[i].image} }, { quoted: m} ).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
 //ShadowBotInc.sendMessage(m.chat,{image:{url:wallpaper[i].image},caption:`*Query :* ${q}`})            
 break
@@ -5215,7 +5215,7 @@ if (!AntiNsfw) return replygcxeon(mess.nsfw)
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://nekos.life/api/v2/img/spank`)     
             await ShadowBotInc.sendMessage(m.chat, { caption:  `Here you go!`, image: {url:waifudd.data.url} },{ quoted:m }).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
 break
 case 'ahegao':
@@ -5460,7 +5460,7 @@ case 'animeawoo':{
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/awoo`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
                 }
 break
@@ -5468,7 +5468,7 @@ case 'animemegumin':{
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/megumin`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
                 }
 break
@@ -5476,7 +5476,7 @@ case 'animeshinobu':{
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/shinobu`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
                 }
 break
@@ -5484,7 +5484,7 @@ case 'animehandhold':{
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/handhold`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
                 }
 break
@@ -5492,7 +5492,7 @@ case 'animehighfive':{
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/highfive`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
                 }
 break
@@ -5500,7 +5500,7 @@ case 'animecringe':{
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/cringe`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
                 }
 break
@@ -5508,7 +5508,7 @@ case 'animedance':{
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/dance`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
                 }
 break
@@ -5516,7 +5516,7 @@ case 'animehappy':{
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/happy`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
                 }
 break
@@ -5524,7 +5524,7 @@ case 'animeglomp':{
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/glomp`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
                 }
 break
@@ -5532,7 +5532,7 @@ case 'animesmug':{
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/smug`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
                 }
 break
@@ -5540,7 +5540,7 @@ case 'animeblush':{
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/blush`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
                 }
 break
@@ -5548,7 +5548,7 @@ case 'animewave':{
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/wave`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
                 }
 break
@@ -5556,7 +5556,7 @@ case 'animesmile':{
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/smile`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
                 }
 break
@@ -5564,7 +5564,7 @@ case 'animepoke':{
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/poke`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
                 }
 break
@@ -5572,7 +5572,7 @@ case 'animewink':{
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/wink`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
                 }
 break
@@ -5580,7 +5580,7 @@ case 'animebonk':{
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/bonk`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
                 }
 break
@@ -5588,7 +5588,7 @@ case 'animebully':{
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/bully`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
                 }
 break
@@ -5596,7 +5596,7 @@ case 'animeyeet':{
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/yeet`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
                 }
 break
@@ -5604,7 +5604,7 @@ case 'animebite':{
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/bite`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
                 }
 break
@@ -5612,7 +5612,7 @@ case 'animelick':{
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/lick`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
                 }
 break
@@ -5620,7 +5620,7 @@ case 'animekill':{
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/kill`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
                 }
 break
@@ -5628,7 +5628,7 @@ case 'animecry':{
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/cry`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
                 }
 break
@@ -5636,7 +5636,7 @@ case 'animewlp':{
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://nekos.life/api/v2/img/wallpaper`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
                 }
 break
@@ -5644,7 +5644,7 @@ case 'animekiss':{
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://nekos.life/api/v2/img/kiss`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
                 }
 break
@@ -5652,7 +5652,7 @@ case 'animehug':{
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://nekos.life/api/v2/img/hug`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
                 }
 break
@@ -5660,7 +5660,7 @@ case 'animeneko':{
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/neko`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
                 }
 break
@@ -5668,7 +5668,7 @@ case 'animepat':{
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://nekos.life/api/v2/img/pat`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
                 }
 break
@@ -5676,7 +5676,7 @@ case 'animeslap':{
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://nekos.life/api/v2/img/slap`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
                 }
 break
@@ -5684,7 +5684,7 @@ case 'animecuddle':{
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://nekos.life/api/v2/img/cuddle`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
                 }
 break
@@ -5692,7 +5692,7 @@ case 'animewaifu':{
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://nekos.life/api/v2/img/waifu`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
                 }
 break
@@ -5700,7 +5700,7 @@ case 'animenom':{
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://nekos.life/api/v2/img/nom`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
                 }
 break
@@ -5708,7 +5708,7 @@ case 'animefoxgirl':{
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://nekos.life/api/v2/img/fox_girl`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
                 }
 break
@@ -5716,7 +5716,7 @@ case 'animetickle': {
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://nekos.life/api/v2/img/tickle`)     
             await ShadowBotInc.sendMessage(m.chat, {image: {url:waifudd.data.url}, caption: mess.success},{ quoted:m }).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
                 }
 break
@@ -5724,7 +5724,7 @@ case 'animegecg': {
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://nekos.life/api/v2/img/gecg`)     
             await ShadowBotInc.sendMessage(m.chat, {image: {url:waifudd.data.url}, caption: mess.success},{ quoted:m }).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
                 }
 break
@@ -5732,7 +5732,7 @@ case 'dogwoof': {
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://nekos.life/api/v2/img/woof`)     
             await ShadowBotInc.sendMessage(m.chat, {image: {url:waifudd.data.url}, caption: mess.success},{ quoted:m }).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
                 }
 break
@@ -5740,7 +5740,7 @@ case '8ballpool': {
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://nekos.life/api/v2/img/8ball`)     
             await ShadowBotInc.sendMessage(m.chat, {image: {url:waifudd.data.url}, caption: mess.success},{ quoted:m }).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
                 }
 break
@@ -5748,7 +5748,7 @@ case 'goosebird': {
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://nekos.life/api/v2/img/goose`)     
             await ShadowBotInc.sendMessage(m.chat, {image: {url:waifudd.data.url}, caption: mess.success},{ quoted:m }).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
                 }
 break
@@ -5756,7 +5756,7 @@ case 'animefeed': {
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://nekos.life/api/v2/img/feed`)     
             await ShadowBotInc.sendMessage(m.chat, {image: {url:waifudd.data.url}, caption: mess.success},{ quoted:m }).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
                 }
 break
@@ -5764,7 +5764,7 @@ case 'animeavatar': {
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://nekos.life/api/v2/img/avatar`)     
             await ShadowBotInc.sendMessage(m.chat, {image: {url:waifudd.data.url}, caption: mess.success},{ quoted:m }).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
                 }
 break
@@ -5772,7 +5772,7 @@ case 'lizardpic': {
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://nekos.life/api/v2/img/lizard`)     
             await ShadowBotInc.sendMessage(m.chat, {image: {url:waifudd.data.url}, caption: mess.success},{ quoted:m }).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
                 }
 break
@@ -5780,7 +5780,7 @@ case 'catmeow': {
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://nekos.life/api/v2/img/meow`)     
             await ShadowBotInc.sendMessage(m.chat, {image: {url:waifudd.data.url}, caption: mess.success},{ quoted:m }).catch(err => {
-                    return('Error!')
+                    return('*Uhh, I seem to have encountered an error in my grand design.*')
                 })
                 }
 break
@@ -5860,7 +5860,7 @@ if (isQuotedAudio) {
 rname = getRandom('.mp3')
 exec(`ffmpeg -i ${media} -filter:a volume=${args[0]} ${rname}`, (err, stderr, stdout) => {
 fs.unlinkSync(media)
-if (err) return replygcxeon('Error!')
+if (err) return replygcxeon('*Uhh, I seem to have encountered an error in my grand design.*')
 jadie = fs.readFileSync(rname)
 ShadowBotInc.sendMessage(from, {audio:jadie, mimetype: 'audio/mp4', ptt: true}, {quoted: m})
 fs.unlinkSync(rname)
@@ -5869,7 +5869,7 @@ fs.unlinkSync(rname)
 rname = getRandom('.mp4')
 exec(`ffmpeg -i ${media} -filter:a volume=${args[0]} ${rname}`, (err, stderr, stdout) => {
 fs.unlinkSync(media)
-if (err) return replygcxeon('Error!')
+if (err) return replygcxeon('*Uhh, I seem to have encountered an error in my grand design.*')
 jadie = fs.readFileSync(rname)
 ShadowBotInc.sendMessage(from, {video:jadie, mimetype: 'video/mp4'}, {quoted: m})
 fs.unlinkSync(rname)
@@ -5892,7 +5892,7 @@ break
   }
  break
 case 'git': case 'gitclone':
-if (!args[0]) return replygcxeon(`Where is the link?\nExample :\n${prefix}${command} https://github.com/DGXeon/XeonMedia`)
+if (!args[0]) return replygcxeon(`Please provide me *link*, Baka!\nExample :\n${prefix}${command} https://github.com/`)
 if (!isUrl(args[0]) && !args[0].includes('github.com')) return replygcxeon(`Link invalid!!`)
 let regex1 = /(?:https|git)(?::\/\/|@)github\.com[\/:]([^\/:]+)\/(.+)/i
     let [, user, repo] = args[0].match(regex1) || []
@@ -5903,7 +5903,7 @@ let regex1 = /(?:https|git)(?::\/\/|@)github\.com[\/:]([^\/:]+)\/(.+)/i
 break
 case "spotify":{
 if (!isPrem) return replyprem(mess.premium)
-if (!text) return replygcxeon(`Where is the link?`)
+if (!text) return replygcxeon(`Please provide me *link*, Baka!`)
         const Spotify = require('./lib/spotify')
         const spotify = new Spotify(text)
         const info = await spotify.getInfo()
@@ -6137,7 +6137,7 @@ mentionedJid:[xeonshimts],
          }
      break
      case "igvid": case "instavid": {
-if (!text) return replygcxeon(`Where is the link?\n\nExample : ${prefix + command} https://www.instagram.com/reel/Ctjt0srIQFg/?igshid=MzRlODBiNWFlZA==`)
+if (!text) return replygcxeon(`Please provide me *link*, Baka!\n\nExample : ${prefix + command} https://www.instagram.com/reel/Ctjt0srIQFg/?igshid=MzRlODBiNWFlZA==`)
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 let resxeonyinsta = await InstaMp4(text)
 const gha1 = await ShadowBotInc.sendMessage(m.chat,{video:{url: resxeonyinsta.url[0].url},caption: mess.success},{quoted:m})
@@ -6165,7 +6165,7 @@ const fg = require('api-dylux')
 }
 break
            case "igimg": case "instaimg":  {
-if (!text) return replygcxeon(`Where is the link?\n\nExample : ${prefix + command} https://www.instagram.com/p/Cs8x1ljt_D9/?igshid=MzRlODBiNWFlZA==`)
+if (!text) return replygcxeon(`Please provide me *link*, Baka!\n\nExample : ${prefix + command} https://www.instagram.com/p/Cs8x1ljt_D9/?igshid=MzRlODBiNWFlZA==`)
 reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 const risponsxeon = await IgImg(text)
 for (let i=0;i<risponsxeon.length;i++) {
