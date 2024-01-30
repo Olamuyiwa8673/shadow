@@ -604,7 +604,7 @@ jpegThumbnail: defaultpp } } }
 
 const banRep = () => {
 ShadowBotInc.sendMessage(m.chat, {
-text:`Sorry you've been banned, please chat @${creator.split("@")[0]} to unban`,
+text:`*gomen ne! you have been banned by  Owner-sama! 🚫🔒*, please chat @${creator.split("@")[0]} to unban`,
 mentions: [creator],
 },
 {
@@ -1029,7 +1029,7 @@ async function replyprem(teks) {
 // Anti Link
         if (Antilinkgc) {
         if (budy.match(`chat.whatsapp.com`)) {
-        if (!isBotAdmins) return XeonStickBotAdmin()
+        if (!isBotAdmins) return reply('*Provide me Admin Role, Senpai❗, Grant me the power that I seek.*')
         let gclink = (`https://chat.whatsapp.com/`+await ShadowBotInc.groupInviteCode(m.chat))
         let isLinkThisGc = new RegExp(gclink, 'i')
         let isgclink = isLinkThisGc.test(m.text)
@@ -1097,7 +1097,7 @@ ShadowBotInc.sendMessage(from, {text:`\`\`\`「 Wa.me Link Detected 」\`\`\`\n\
 //antivirtex by xeon
   if (antiVirtex) {
   if (budy.length > 3500) {
-  if (!isBotAdmins) return XeonStickBotAdmin()
+  if (!isBotAdmins) return reply('*Provide me Admin Role, Senpai❗, Grant me the power that I seek.*')
           await ShadowBotInc.sendMessage(m.chat,
 			    {
 			        delete: {
@@ -1437,19 +1437,19 @@ Type *surrender* to surrender and admit defeat`
             }
             break
 	case 'public': {
-                if (!ShadowTheCreator) return XeonStickOwner()
+                if (!ShadowTheCreator) return reply('*⚠️ This Command is exclusively for My Owner. The one who holds the key to my existence*')
                 ShadowBotInc.public = true
                 replygcxeon('*Successful in Changing To Public Usage*')
             }
             break
             case 'self': {
-                if (!ShadowTheCreator) return XeonStickOwner()
+                if (!ShadowTheCreator) return reply('*⚠️ This Command is exclusively for My Owner. The one who holds the key to my existence*')
                 ShadowBotInc.public = false
                 replygcxeon('*Successful in Changing To Self Usage*')
             }
             break
 case 'rentbot': {
-if (m.isGroup) return XeonStickPrivate()
+if (m.isGroup) return reply('*This command is a secret move, only to be used in private, senpai~ Shh! 🤫*')
 
 rentfromshadow(ShadowBotInc, m, from)
 }
@@ -1469,7 +1469,7 @@ replygcxeon(`There are no users who have rented the bot yet`)
 }
 break
 case 'shutdown':
-if (!ShadowTheCreator) return XeonStickOwner()
+if (!ShadowTheCreator) return reply('*⚠️ This Command is exclusively for My Owner. The one who holds the key to my existence*')
 replygcxeon(`Ba bye...`)
 await sleep(3000)
 process.exit()
@@ -2096,7 +2096,7 @@ case 'searchfriend':{
 
 let teman = pickRandom(verifieduser)
 setTimeout(() => {
-XeonStickWait()
+    reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 }, 1000)
 setTimeout(() => {
 replygcxeon('Managed to Get One Person')
@@ -2165,7 +2165,7 @@ break
 case 'igstalk2':{
 
 if (!q) return replygcxeon(`Example ${prefix+command} unicorn_xeon`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 const aj = await igstalk(`${q}`)
 ShadowBotInc.sendMessage(m.chat, { image: { url : aj.profile }, caption: 
 `*/ Instagram Stalker \\*
@@ -2181,7 +2181,7 @@ break
 case 'ffstalk':{
 
 if (!q) return replygcxeon(`Example ${prefix+command} 946716486`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 eeh = await ffstalk.ffstalk(`${q}`)
 replygcxeon(`*/ Free Fire Stalker \\*
 
@@ -2192,7 +2192,7 @@ break
 case 'mlstalk': {
 
 if (!q) return replygcxeon(`Example ${prefix+command} 530793138|8129`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 let dat = await mlstalk.mlstalk(q.split("|")[0], q.split("|")[1])
 replygcxeon(`*/ Mobile Legend Stalker \\*
 
@@ -2203,7 +2203,7 @@ ID Zone: ${q.split("|")[1]}`)
 break
 case 'npmstalk':{
 if (!q) return replygcxeon(`Example ${prefix+command} xeonapi`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 eha = await npmstalk.npmstalk(q)
 replygcxeon(`*/ Npm Stalker \\*
 
@@ -2219,7 +2219,7 @@ Latest Publish Time : ${eha.latestPublishTime}`)
 break
 case 'ghstalk': case 'githubstalk':{
 if (!q) return replygcxeon(`Example ${prefix+command} DGXeon`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 aj = await githubstalk.githubstalk(`${q}`)
 ShadowBotInc.sendMessage(m.chat, { image: { url : aj.profile_pic }, caption: 
 `*/ Github Stalker \\*
@@ -2247,13 +2247,13 @@ Updated At : ${aj.updated_at}` }, { quoted: m } )
 break
 case 'ss': case 'ssweb': {
 if (!q) return replygcxeon(`Example ${prefix+command} link`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 let krt = await scp1.ssweb(q)
 ShadowBotInc.sendMessage(from,{image:krt.result,caption:mess.succes}, {quoted:m})
 }
 break
 case 'join': {
-if (!ShadowTheCreator) return XeonStickOwner()
+if (!ShadowTheCreator) return reply('*⚠️ This Command is exclusively for My Owner. The one who holds the key to my existence*')
 if (!text) return replygcxeon(`Contoh ${prefix+command} linkgc`)
 if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) return replygcxeon('Link Invalid!')
 let result = args[0].split('https://chat.whatsapp.com/')[1]
@@ -2262,7 +2262,7 @@ await replygcxeon(`Done`)
 }
 break
 case 'poll': {
-	if (!ShadowTheCreator) return XeonStickOwner()
+	if (!ShadowTheCreator) return reply('*⚠️ This Command is exclusively for My Owner. The one who holds the key to my existence*')
             let [poll, opt] = text.split("|")
             if (text.split("|") < 2)
                 return await replygcxeon(
@@ -2281,7 +2281,7 @@ case 'poll': {
         }
         break
         case 'vote': {
-            if (!m.isGroup) return XeonStickGroup()
+            if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
             if (m.chat in vote) return replygcxeon(`_There are still votes in this chat!_\n\n*${prefix}deletevote* - to delete votes`)
             if (!text) return replygcxeon(`Enter Reason for Vote, Example: *${prefix + command} Handsome Owner*`)
             replygcxeon(`Voting starts!\n\n*${prefix}upvote* - for upvote\n*${prefix}downvote* - for downvote\n*${prefix}checkvote* - to check the vote\n*${prefix}deletevote* - to delete vote`)
@@ -2315,7 +2315,7 @@ Please Type Below
 	    }
             break
                case 'upvote': {
-            if (!m.isGroup) return XeonStickGroup()
+            if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
             if (!(m.chat in vote)) return replygcxeon(`_*no voting in this group!*_\n\n*${prefix}vote* - to start voting`)
             isVote = vote[m.chat][1].concat(vote[m.chat][2])
             wasVote = isVote.includes(m.sender)
@@ -2348,7 +2348,7 @@ Please Type Below
 	    }
              break
                 case 'downvote': {
-            if (!m.isGroup) return XeonStickGroup()
+            if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
             if (!(m.chat in vote)) return replygcxeon(`_*no voting in this group!*_\n\n*${prefix}vote* - to start voting`)
             isVote = vote[m.chat][1].concat(vote[m.chat][2])
             wasVote = isVote.includes(m.sender)
@@ -2382,7 +2382,7 @@ Please Type Below
             break
                  
 case 'checkvote':
-if (!m.isGroup) return XeonStickGroup()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
 if (!(m.chat in vote)) return replygcxeon(`_*no voting in this group!*_\n\n*${prefix}vote* - to start voting`)
 teks_vote = `* VOTE *
 
@@ -2410,7 +2410,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 ShadowBotInc.sendTextWithMentions(m.chat, teks_vote, m)
 break
 		case 'deletevote': case'delvote': case 'hapusvote': {
-            if (!m.isGroup) return XeonStickGroup()
+            if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
             if (!(m.chat in vote)) return replygcxeon(`_*no voting in this group!*_\n\n*${prefix}vote* - to start voting`)
             delete vote[m.chat]
             replygcxeon('Successfully Deleted Vote Session In This Group')
@@ -2418,7 +2418,7 @@ break
             break
 case 'toonce': case 'toviewonce': { 
 if (!quoted) return replygcxeon(`Reply Image/Video`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 if (/image/.test(mime)) {
 anuan = await ShadowBotInc.downloadAndSaveMediaMessage(quoted)
 ShadowBotInc.sendMessage(m.chat, {image: {url:anuan}, caption: `Here you go!`, fileLength: "999", viewOnce : true},{quoted: m })
@@ -2503,7 +2503,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
             }
             break
             case 'bctext': case 'broadcasttext': case 'broadcast': {
-			    if (!ShadowTheCreator) return XeonStickOwner()
+			    if (!ShadowTheCreator) return reply('*⚠️ This Command is exclusively for My Owner. The one who holds the key to my existence*')
 		            if (!q) return replygcxeon(`Enter text`)
 		                            const data = await store.chats.all()
                             for (let i of data) {
@@ -2513,7 +2513,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                             }
                             break
                             case 'broadcastimage': case 'bcimage': case 'broadcastvideo': case 'broadcastvid':
-if(!ShadowTheCreator) return XeonStickOwner()
+if(!ShadowTheCreator) return reply('*⚠️ This Command is exclusively for My Owner. The one who holds the key to my existence*')
         if (!q) return replygcxeon(`Enter text`)
         let getGroups = await ShadowBotInc.groupFetchAllParticipating()
         let groups = Object.entries(getGroups).slice(0).map(entry => entry[1])
@@ -2533,14 +2533,14 @@ await ShadowBotInc.sendMessage(i, { video:media,  caption: txt, mentions:partici
         replygcxeon(`Successfuly Broadcasted in ${xeoncast.length} Groups`)      
         break
 case 'block': case 'ban': {
-		if (!ShadowTheCreator) return XeonStickOwner()
+		if (!ShadowTheCreator) return reply('*⚠️ This Command is exclusively for My Owner. The one who holds the key to my existence*')
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 		await ShadowBotInc.updateBlockStatus(users, 'block')
 		await replygcxeon(`Done`)
 	}
 	break
         case 'unblock': case 'unban': {
-		if (!ShadowTheCreator) return XeonStickOwner()
+		if (!ShadowTheCreator) return reply('*⚠️ This Command is exclusively for My Owner. The one who holds the key to my existence*')
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 		await ShadowBotInc.updateBlockStatus(users, 'unblock')
 		await replygcxeon(`Done`)
@@ -2552,7 +2552,7 @@ case 'listblock': case 'listban': case 'blocklist': case 'banlist': {
 	}
 	break
 case 'afk': {
-if (!m.isGroup) return XeonStickGroup()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
 if (!text) return replygcxeon(`Example ${prefix+command} want to sleep`)
 let user = global.db.users[m.sender]
 user.afkTime = + new Date
@@ -2568,14 +2568,14 @@ case 'resetlink':
 case 'resetgrouplink':
 case 'resetgclink':
 case 'resetgruplink': {
-if (!m.isGroup) return XeonStickGroup()
-if (!isBotAdmins) return XeonStickBotAdmin()
-if (!isAdmins && !ShadowTheCreator) return XeonStickAdmin()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
+if (!isBotAdmins) return reply('*Provide me Admin Role, Senpai❗, Grant me the power that I seek.*')
+if (!isAdmins && !ShadowTheCreator) return reply('*Gomenasai! This command is exclusive for the Admin-sama only! *🉐✨')
 ShadowBotInc.groupRevokeInvite(m.chat)
 }
 break
             case 'react': {
-                if (!ShadowTheCreator) return XeonStickOwner()
+                if (!ShadowTheCreator) return reply('*⚠️ This Command is exclusively for My Owner. The one who holds the key to my existence*')
                 reactionMessage = {
                     react: {
                         text: args[0],
@@ -2586,9 +2586,9 @@ break
             }
             break
 case 'group': case 'editinfo': {
-if (!m.isGroup) return XeonStickGroup()
-if (!isAdmins && !ShadowTheCreator) return XeonStickAdmin()
-if (!isBotAdmins) return XeonStickBotAdmin()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
+if (!isAdmins && !ShadowTheCreator) return reply('*Gomenasai! This command is exclusive for the Admin-sama only!* 🉐✨')
+if (!isBotAdmins) return reply('*Provide me Admin Role, Senpai❗, Grant me the power that I seek.*')
 if (!q) return replygcxeon(`Send orders ${command} _options_\nOptions : close & open\nExample : ${command} close`)
 if (args[0] == 'close') {
 ShadowBotInc.groupSettingUpdate(from, 'announcement')
@@ -2602,7 +2602,7 @@ replygcxeon(`Type Command ${command} _pptions_\nOptions : Close & Open\nExample 
 break
 case 'autostickergc':
             case 'autosticker':
-if (!isAdmins && !ShadowTheCreator) return XeonStickAdmin()
+if (!isAdmins && !ShadowTheCreator) return reply('*Gomenasai! This command is exclusive for the Admin-sama only! *🉐✨')
 if (args.length < 1) return replygcxeon('type auto sticker on to enable\ntype auto sticker off to disable')
 if (args[0]  === 'on'){
 if (isAutoSticker) return replygcxeon(`Already activated`)
@@ -2617,9 +2617,9 @@ replygcxeon('auto sticker deactivated')
 }
 break
 case 'antivirus': case 'antivirtex': {
-if (!m.isGroup) return XeonStickGroup()
-if (!isBotAdmins) return XeonStickBotAdmin()
-if (!isAdmins && !ShadowTheCreator) return XeonStickAdmin()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
+if (!isBotAdmins) return reply('*Provide me Admin Role, Senpai❗, Grant me the power that I seek.*')
+if (!isAdmins && !ShadowTheCreator) return reply('*Gomenasai! This command is exclusive for the Admin-sama only! *🉐✨')
 if (args[0] === "on") {
 if (antiVirtex) return replygcxeon('Already activated')
 ntvirtex.push(from)
@@ -2644,9 +2644,9 @@ replygcxeon('Success in turning off antivirus this group')
   }
   break
 case 'nsfw': {
-if (!m.isGroup) return XeonStickGroup()
-if (!isBotAdmins) return XeonStickBotAdmin()
-if (!isAdmins && !ShadowTheCreator) return XeonStickAdmin()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
+if (!isBotAdmins) return reply('*Provide me Admin Role, Senpai❗, Grant me the power that I seek.*')
+if (!isAdmins && !ShadowTheCreator) return reply('*Gomenasai! This command is exclusive for the Admin-sama only! *🉐✨')
 if (args[0] === "on") {
 if (AntiNsfw) return replygcxeon('Already activated')
 ntnsfw.push(from)
@@ -2671,9 +2671,9 @@ replygcxeon('Success in turning off nsfw in this group')
   }
   break
   case 'antilinkyoutubevideo': case 'antilinkyoutubevid': case 'antilinkytvid': {
-if (!m.isGroup) return XeonStickGroup()
-if (!isBotAdmins) return XeonStickBotAdmin()
-if (!isAdmins && !ShadowTheCreator) return XeonStickAdmin()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
+if (!isBotAdmins) return reply('*Provide me Admin Role, Senpai❗, Grant me the power that I seek.*')
+if (!isAdmins && !ShadowTheCreator) return reply('*Gomenasai! This command is exclusive for the Admin-sama only! *🉐✨')
 if (args[0] === "on") {
 if (AntiLinkYoutubeVid) return replygcxeon('Already activated')
 ntilinkytvid.push(from)
@@ -2698,9 +2698,9 @@ replygcxeon('Success in turning off youtube video antilink in this group')
   }
   break
     case 'antilinkyoutubech': case 'antilinkyoutubechannel': case 'antilinkytch': {
-if (!m.isGroup) return XeonStickGroup()
-if (!isBotAdmins) return XeonStickBotAdmin()
-if (!isAdmins && !ShadowTheCreator) return XeonStickAdmin()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
+if (!isBotAdmins) return reply('*Provide me Admin Role, Senpai❗, Grant me the power that I seek.*')
+if (!isAdmins && !ShadowTheCreator) return reply('*Gomenasai! This command is exclusive for the Admin-sama only! *🉐✨')
 if (args[0] === "on") {
 if (AntiLinkYoutubeChannel) return replygcxeon('Already activated')
 ntilinkytch.push(from)
@@ -2725,9 +2725,9 @@ replygcxeon('Success in turning off youtube channel antilink in this group')
   }
   break
       case 'antilinkinstagram': case 'antilinkig': case 'antilinkinsta': {
-if (!m.isGroup) return XeonStickGroup()
-if (!isBotAdmins) return XeonStickBotAdmin()
-if (!isAdmins && !ShadowTheCreator) return XeonStickAdmin()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
+if (!isBotAdmins) return reply('*Provide me Admin Role, Senpai❗, Grant me the power that I seek.*')
+if (!isAdmins && !ShadowTheCreator) return reply('*Gomenasai! This command is exclusive for the Admin-sama only! *🉐✨')
 if (args[0] === "on") {
 if (AntiLinkInstagram) return replygcxeon('Already activated')
 ntilinkig.push(from)
@@ -2752,9 +2752,9 @@ replygcxeon('Success in turning off instagram antilink in this group')
   }
   break
         case 'antilinkfacebook': case 'antilinkfb': {
-if (!m.isGroup) return XeonStickGroup()
-if (!isBotAdmins) return XeonStickBotAdmin()
-if (!isAdmins && !ShadowTheCreator) return XeonStickAdmin()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
+if (!isBotAdmins) return reply('*Provide me Admin Role, Senpai❗, Grant me the power that I seek.*')
+if (!isAdmins && !ShadowTheCreator) return reply('*Gomenasai! This command is exclusive for the Admin-sama only! *🉐✨')
 if (args[0] === "on") {
 if (AntiLinkFacebook) return replygcxeon('Already activated')
 ntilinkfb.push(from)
@@ -2779,9 +2779,9 @@ replygcxeon('Success in turning off facebook antilink in this group')
   }
   break
           case 'antilinktelegram': case 'antilinktg': {
-if (!m.isGroup) return XeonStickGroup()
-if (!isBotAdmins) return XeonStickBotAdmin()
-if (!isAdmins && !ShadowTheCreator) return XeonStickAdmin()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
+if (!isBotAdmins) return reply('*Provide me Admin Role, Senpai❗, Grant me the power that I seek.*')
+if (!isAdmins && !ShadowTheCreator) return reply('*Gomenasai! This command is exclusive for the Admin-sama only! *🉐✨')
 if (args[0] === "on") {
 if (AntiLinkTelegram) return replygcxeon('Already activated')
 ntilinktg.push(from)
@@ -2806,9 +2806,9 @@ replygcxeon('Success in turning off telegram antilink in this group')
   }
   break
             case 'antilinktiktok': case 'antilinktt': {
-if (!m.isGroup) return XeonStickGroup()
-if (!isBotAdmins) return XeonStickBotAdmin()
-if (!isAdmins && !ShadowTheCreator) return XeonStickAdmin()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
+if (!isBotAdmins) return reply('*Provide me Admin Role, Senpai❗, Grant me the power that I seek.*')
+if (!isAdmins && !ShadowTheCreator) return reply('*Gomenasai! This command is exclusive for the Admin-sama only! *🉐✨')
 if (args[0] === "on") {
 if (AntiLinkTiktok) return replygcxeon('Already activated')
 ntilinktt.push(from)
@@ -2833,9 +2833,9 @@ replygcxeon('Success in turning off tiktok antilink in this group')
   }
   break
             case 'antilinktwt': case 'antilinktwitter': case 'antilinktwit': {
-if (!m.isGroup) return XeonStickGroup()
-if (!isBotAdmins) return XeonStickBotAdmin()
-if (!isAdmins && !ShadowTheCreator) return XeonStickAdmin()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
+if (!isBotAdmins) return reply('*Provide me Admin Role, Senpai❗, Grant me the power that I seek.*')
+if (!isAdmins && !ShadowTheCreator) return reply('*Gomenasai! This command is exclusive for the Admin-sama only! *🉐✨')
 if (args[0] === "on") {
 if (AntiLinkTwitter) return replygcxeon('Already activated')
 ntilinktwt.push(from)
@@ -2860,9 +2860,9 @@ replygcxeon('Success in turning off twitter antilink in this group')
   }
   break
               case 'antilinkall': {
-if (!m.isGroup) return XeonStickGroup()
-if (!isBotAdmins) return XeonStickBotAdmin()
-if (!isAdmins && !ShadowTheCreator) return XeonStickAdmin()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
+if (!isBotAdmins) return reply('*Provide me Admin Role, Senpai❗, Grant me the power that I seek.*')
+if (!isAdmins && !ShadowTheCreator) return reply('*Gomenasai! This command is exclusive for the Admin-sama only! *🉐✨')
 if (args[0] === "on") {
 if (AntiLinkTwitter) return replygcxeon('Already activated')
 ntilinkall.push(from)
@@ -2887,9 +2887,9 @@ replygcxeon('Success in turning off all antilink in this group')
   }
   break
 case 'antitoxic': case 'antibadword': {
-if (!m.isGroup) return XeonStickGroup()
-if (!isBotAdmins) return XeonStickBotAdmin()
-if (!isAdmins && !ShadowTheCreator) return XeonStickAdmin()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
+if (!isBotAdmins) return reply('*Provide me Admin Role, Senpai❗, Grant me the power that I seek.*')
+if (!isAdmins && !ShadowTheCreator) return reply('*Gomenasai! This command is exclusive for the Admin-sama only! *🉐✨')
 if (args[0] === "on") {
 if (antiToxic) return replygcxeon('Already activated')
 nttoxic.push(from)
@@ -2914,9 +2914,9 @@ replygcxeon('Success in turning off antitoxic in this group')
   }
   break
 case 'antiwame': {
-if (!m.isGroup) return XeonStickGroup()
-if (!isBotAdmins) return XeonStickBotAdmin()
-if (!isAdmins && !ShadowTheCreator) return XeonStickAdmin()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
+if (!isBotAdmins) return reply('*Provide me Admin Role, Senpai❗, Grant me the power that I seek.*')
+if (!isAdmins && !ShadowTheCreator) return reply('*Gomenasai! This command is exclusive for the Admin-sama only! *🉐✨')
 if (args[0] === "on") {
 if (antiWame) return replygcxeon('Already activated')
 ntwame.push(from)
@@ -2941,9 +2941,9 @@ replygcxeon('Success in turning off antiwame in this group')
   }
   break
 case 'antilinkgc': {
-if (!m.isGroup) return XeonStickGroup()
-if (!isBotAdmins) return XeonStickBotAdmin()
-if (!isAdmins && !ShadowTheCreator) return XeonStickAdmin()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
+if (!isBotAdmins) return reply('*Provide me Admin Role, Senpai❗, Grant me the power that I seek.*')
+if (!isAdmins && !ShadowTheCreator) return reply('*Gomenasai! This command is exclusive for the Admin-sama only! *🉐✨')
 if (args[0] === "on") {
 if (Antilinkgc) return replygcxeon('Already activated')
 ntlinkgc.push(from)
@@ -2968,24 +2968,24 @@ await replygcxeon(`Please Type The Option\n\nExample: ${prefix + command} on\nEx
   }
   break
    case 'leavegc': {
-                if (!ShadowTheCreator) return XeonStickOwner()
+                if (!ShadowTheCreator) return reply('*⚠️ This Command is exclusively for My Owner. The one who holds the key to my existence*')
                 await ShadowBotInc.groupLeave(m.chat)
                 await replygcxeon(`Done`)
             }
             break
 case 'add': {
-if (!m.isGroup) return XeonStickGroup()
-if (!isBotAdmins) return XeonStickBotAdmin()
-if (!ShadowTheCreator) return XeonStickOwner()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
+if (!isBotAdmins) return reply('*Provide me Admin Role, Senpai❗, Grant me the power that I seek.*')
+if (!ShadowTheCreator) return reply('*⚠️ This Command is exclusively for My Owner. The one who holds the key to my existence*')
 let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 await ShadowBotInc.groupParticipantsUpdate(m.chat, [users], 'add')
 await replygcxeon(`Done`)
 }
 break
 case 'closetime': {
-if (!m.isGroup) return XeonStickGroup()
-if (!isAdmins && !ShadowTheCreator) return XeonStickAdmin()
-if (!isBotAdmins) return XeonStickBotAdmin()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
+if (!isAdmins && !ShadowTheCreator) return reply('*Gomenasai! This command is exclusive for the Admin-sama only! *🉐✨')
+if (!isBotAdmins) return reply('*Provide me Admin Role, Senpai❗, Grant me the power that I seek.*')
 if (args[1] == 'second') {
 var timer = args[0] * `1000`
 } else if (args[1] == 'minute') {
@@ -3007,9 +3007,9 @@ replygcxeon(close)
 }
 break
            case 'ephemeral': {
-                if (!m.isGroup) return XeonStickGroup()
-                if (!isBotAdmins) return XeonStickBotAdmin()
-                if (!isAdmins) return XeonStickAdmin()
+                if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
+                if (!isBotAdmins) return reply('*Provide me Admin Role, Senpai❗, Grant me the power that I seek.*')
+                if (!isAdmins) return reply('*Gomenasai! This command is exclusive for the Admin-sama only! *🉐✨')
                 if (!text) return replygcxeon('Enter the value enable/disable')
                 if (args[0] === 'enable') {
                     await ShadowBotInc.sendMessage(m.chat, { disappearingMessagesInChat: WA_DEFAULT_EPHEMERAL })
@@ -3027,16 +3027,16 @@ break
             }
             break
             case 'linkgroup': case 'linkgc': case 'gclink': case 'grouplink': {
-                if (!m.isGroup) return XeonStickGroup()
-                if (!isBotAdmins) return XeonStickBotAdmin()
+                if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
+                if (!isBotAdmins) return reply('*Provide me Admin Role, Senpai❗, Grant me the power that I seek.*')
                 let response = await ShadowBotInc.groupInviteCode(m.chat)
                 ShadowBotInc.sendText(m.chat, `https://chat.whatsapp.com/${response}\n\nGroup Link : ${groupMetadata.subject}`, m, { detectLink: true })
             }
             break
 case 'opentime': {
-if (!m.isGroup) return XeonStickGroup()
-if (!isAdmins && !ShadowTheCreator) return XeonStickAdmin()
-if (!isBotAdmins) return XeonStickBotAdmin()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
+if (!isAdmins && !ShadowTheCreator) return reply('*Gomenasai! This command is exclusive for the Admin-sama only! *🉐✨')
+if (!isBotAdmins) return reply('*Provide me Admin Role, Senpai❗, Grant me the power that I seek.*')
 if (args[1] == 'second') {
 var timer = args[0] * `1000`
 } else if (args[1] == 'minute') {
@@ -3058,50 +3058,50 @@ replygcxeon(open)
 }
 break
 case 'kick': {
-if (!m.isGroup) return XeonStickGroup()
-if (!isAdmins && !ShadowTheCreator) return XeonStickAdmin()
-if (!isBotAdmins) return XeonStickBotAdmin()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
+if (!isAdmins && !ShadowTheCreator) return reply('*Gomenasai! This command is exclusive for the Admin-sama only! *🉐✨')
+if (!isBotAdmins) return reply('*Provide me Admin Role, Senpai❗, Grant me the power that I seek.*')
 let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 await ShadowBotInc.groupParticipantsUpdate(m.chat, [users], 'remove')
 await replygcxeon(`Done`)
 }
 break
 case 'setbotname':{
-if (!ShadowTheCreator) return XeonStickOwner()
+if (!ShadowTheCreator) return reply('*⚠️ This Command is exclusively for My Owner. The one who holds the key to my existence*')
 if (!text) return replygcxeon(`Where is the name?\nExample: ${prefix + command} Cheems Bot`)
     await ShadowBotInc.updateProfileName(text)
     replygcxeon(`Success in changing the name of bot's number`)
     }
     break
 case 'setbotbio':{
-if (!ShadowTheCreator) return XeonStickOwner()
+if (!ShadowTheCreator) return reply('*⚠️ This Command is exclusively for My Owner. The one who holds the key to my existence*')
 if (!text) return replygcxeon(`Where is the text?\nExample: ${prefix + command} Cheems Bot`)
     await ShadowBotInc.updateProfileStatus(text)
     replygcxeon(`Success in changing the bio of bot's number`)
     }
     break
     case 'setgroupname': case 'setsubject': {
-                if (!m.isGroup) return XeonStickGroup()
-                if (!isBotAdmins) return XeonStickBotAdmin()
-                if (!isAdmins) return XeonStickAdmin()
+                if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
+                if (!isBotAdmins) return reply('*Provide me Admin Role, Senpai❗, Grant me the power that I seek.*')
+                if (!isAdmins) return reply('*Gomenasai! This command is exclusive for the Admin-sama only! *🉐✨')
                 if (!text) return replygcxeon('Text ?')
                 await ShadowBotInc.groupUpdateSubject(m.chat, text)
                 await replygcxeon(`Done`)
             }
             break
           case 'setdesc': case 'setdesk': {
-                if (!m.isGroup) return XeonStickGroup()
-                if (!isBotAdmins) return XeonStickBotAdmin()
-                if (!isAdmins) return XeonStickAdmin()
+                if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
+                if (!isBotAdmins) return reply('*Provide me Admin Role, Senpai❗, Grant me the power that I seek.*')
+                if (!isAdmins) return reply('*Gomenasai! This command is exclusive for the Admin-sama only! *🉐✨')
                 if (!text) return replygcxeon('Text ?')
                 await ShadowBotInc.groupUpdateDescription(m.chat, text)
                 await replygcxeon(`Done`)
             }
             break
 case 'setppgroup': case 'setgcpp': case 'setgrouppp': {
-if (!m.isGroup) return XeonStickGroup()
-if (!isAdmins && !ShadowTheCreator) return XeonStickAdmin()
-if (!isBotAdmins) return XeonStickBotAdmin()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
+if (!isAdmins && !ShadowTheCreator) return reply('*Gomenasai! This command is exclusive for the Admin-sama only! *🉐✨')
+if (!isBotAdmins) return reply('*Provide me Admin Role, Senpai❗, Grant me the power that I seek.*')
 if (!quoted) return replygcxeon(`Where is the picture?`)
 if (!/image/.test(mime)) return replygcxeon(`Send/Reply Image With Caption ${prefix + command}`)
 if (/webp/.test(mime)) return replygcxeon(`Send/Reply Image With Caption ${prefix + command}`)
@@ -3133,56 +3133,56 @@ replygcxeon(`Success`)
 }
 break
 case 'deleteppgroup': case 'delppgc': case 'deleteppgc': case 'delppgroup': {
-if (!m.isGroup) return XeonStickGroup()
-if (!isAdmins && !ShadowTheCreator) return XeonStickAdmin()
-if (!isBotAdmins) return XeonStickBotAdmin()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
+if (!isAdmins && !ShadowTheCreator) return reply('*Gomenasai! This command is exclusive for the Admin-sama only! *🉐✨')
+if (!isBotAdmins) return reply('*Provide me Admin Role, Senpai❗, Grant me the power that I seek.*')
     await ShadowBotInc.removeProfilePicture(from)
     }
     break
 case 'deleteppbot': case 'delppbot': {
-if (!ShadowTheCreator) return XeonStickOwner()
+if (!ShadowTheCreator) return reply('*⚠️ This Command is exclusively for My Owner. The one who holds the key to my existence*')
     await ShadowBotInc.removeProfilePicture(ShadowBotInc.user.id)
     replygcxeon(`Success in deleting bot's profile picture`)
     }
     break
 case 'promote': {
-if (!m.isGroup) return XeonStickGroup()
-if (!isAdmins && !ShadowTheCreator) return XeonStickAdmin()
-if (!isBotAdmins) return XeonStickBotAdmin()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
+if (!isAdmins && !ShadowTheCreator) return reply('*Gomenasai! This command is exclusive for the Admin-sama only! *🉐✨')
+if (!isBotAdmins) return reply('*Provide me Admin Role, Senpai❗, Grant me the power that I seek.*')
 let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 await ShadowBotInc.groupParticipantsUpdate(m.chat, [users], 'promote')
 await replygcxeon(`Done`)
 }
 break
 case 'demote': {
-if (!m.isGroup) return XeonStickGroup()
-if (!isAdmins && !ShadowTheCreator) return XeonStickAdmin()
-if (!isBotAdmins) return XeonStickBotAdmin()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
+if (!isAdmins && !ShadowTheCreator) return reply('*Gomenasai! This command is exclusive for the Admin-sama only! *🉐✨')
+if (!isBotAdmins) return reply('*Provide me Admin Role, Senpai❗, Grant me the power that I seek.*')
 let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 await ShadowBotInc.groupParticipantsUpdate(m.chat, [users], 'demote')
 await replygcxeon(`Done`)
 }
 break
 case 'hidetag': {
-if (!m.isGroup) return XeonStickGroup()
-if (!isAdmins && !ShadowTheCreator) return XeonStickAdmin()
-if (!isBotAdmins) return XeonStickBotAdmin()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
+if (!isAdmins && !ShadowTheCreator) return reply('*Gomenasai! This command is exclusive for the Admin-sama only! *🉐✨')
+if (!isBotAdmins) return reply('*Provide me Admin Role, Senpai❗, Grant me the power that I seek.*')
 ShadowBotInc.sendMessage(m.chat, { text : q ? q : '' , mentions: participants.map(a => a.id)}, { quoted: m })
 }
 break
 case 'totag': {
-if (!m.isGroup) return XeonStickGroup()
-if (!isAdmins && !ShadowTheCreator) return XeonStickAdmin()
-if (!isBotAdmins) return XeonStickBotAdmin()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
+if (!isAdmins && !ShadowTheCreator) return reply('*Gomenasai! This command is exclusive for the Admin-sama only! *🉐✨')
+if (!isBotAdmins) return reply('*Provide me Admin Role, Senpai❗, Grant me the power that I seek.*')
                if (!m.quoted) return replygcxeon(`Reply message with caption ${prefix + command}`)
                ShadowBotInc.sendMessage(m.chat, { forward: m.quoted.fakeObj, mentions: participants.map(a => a.id) })
                }
                break
 
 case 'tagall': {
-if (!m.isGroup) return XeonStickGroup()
-if (!isAdmins && !ShadowTheCreator) return XeonStickAdmin()
-if (!isBotAdmins) return XeonStickBotAdmin()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
+if (!isAdmins && !ShadowTheCreator) return reply('*Gomenasai! This command is exclusive for the Admin-sama only! *🉐✨')
+if (!isBotAdmins) return reply('*Provide me Admin Role, Senpai❗, Grant me the power that I seek.*')
 me = m.sender
 let teks = `╚»˙·٠${themeemoji}●♥ Tag All ♥●${themeemoji}٠·˙«╝ 
  
@@ -3196,7 +3196,7 @@ ShadowBotInc.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a
 break
 case 'ebinary': {
 if (!q) return replygcxeon(`Send/reply text with captions ${prefix + command}`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 let { eBinary } = require('./lib/scrape/binary')
 let eb = await eBinary(`${q}`)
 replygcxeon(eb)
@@ -3204,7 +3204,7 @@ replygcxeon(eb)
 break
 case 'dbinary': {
 if (!q) return replygcxeon(`Send/reply text with captions ${prefix + command}`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 let { dBinary } = require('./lib/scrape/binary')
 let db = await dBinary(`${q}`)
 replygcxeon(db)
@@ -3213,7 +3213,7 @@ break
 case 'remini': {
 			if (!quoted) return replygcxeon(`Where is the picture?`)
 			if (!/image/.test(mime)) return replygcxeon(`Send/Reply Photos With Captions ${prefix + command}`)
-			XeonStickWait()
+			reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 			const { remini } = require('./lib/remini')
 			let media = await quoted.download()
 			let proses = await remini(media, "enhance")
@@ -3222,7 +3222,7 @@ case 'remini': {
 			break
 			case 'gimage': {
                 if (!text) return replygcxeon(`Example : ${prefix + command} carry minati`)
-                XeonStickWait()
+                reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
                 let gis = require('g-i-s')
                 gis(text, async (error, result) => {
                     n = result
@@ -3264,7 +3264,7 @@ break
 case 'tiktokxx':{ 
 if (!text) return replygcxeon( `Example : ${prefix + command} link`)
 if (!q.includes('tiktok')) return replygcxeon(`Link Invalid!!`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 require('./lib/tiktok').Tiktok(q).then( data => {
 ShadowBotInc.sendMessage(m.chat, { caption: `Here you go!`, video: { url: data.watermark }}, {quoted:m})
 })
@@ -3273,7 +3273,7 @@ break
 case 'tiktokaudioxx':{
 if (!text) return replygcxeon( `Example : ${prefix + command} link`)
 if (!q.includes('tiktok')) return replygcxeon(`Link Invalid!!`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 require('./lib/tiktok').Tiktok(q).then( data => {
 ShadowBotInc.sendMessage(m.chat, { audio: { url: data.audio }, mimetype: 'audio/mp4' }, { quoted: m })
 })
@@ -3281,7 +3281,7 @@ ShadowBotInc.sendMessage(m.chat, { audio: { url: data.audio }, mimetype: 'audio/
 break
 case 'google': {
 if (!q) return replygcxeon(`Example : ${prefix + command} ${botname}`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 let google = require('google-it')
 google({'query': text}).then(res => {
 let teks = `Google Search From : ${text}\n\n`
@@ -3296,7 +3296,7 @@ replygcxeon(teks)
 break
 case 'happymod':{
 if (!q) return replygcxeon(`Example ${prefix+command} Sufway surfer mod`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 let kat = await scp1.happymod(q)
 replygcxeon(util.format(kat))
 }
@@ -3316,7 +3316,7 @@ case 'yts': case 'ytsearch': {
             break
 case 'xxxxplay':{
 if (!text) return replygcxeon(`Example : ${prefix+command} story wa anime`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 let search = await yts(text)
 url = search.videos[0].url
 let anu = search.videos[Math.floor(Math.random() * search.videos.length)]
@@ -3398,25 +3398,25 @@ await ShadowBotInc.sendMessage(m.chat,{
 break
 case 'ytvxxx': case 'ytmp4xxx': case 'mp4xxx':{
 if (!text) return replygcxeon('Enter the link!!!')
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 downloadMp4(text)
 }
 break
 case 'ytaxxx': case 'ytmp3xxx': case 'mp3xxx':{
 if (!text) return replygcxeon('Enter the link!!!')
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 downloadMp3(text)
 }
 break  
 case 'getcase':
-if (!ShadowTheCreator) return XeonStickOwner()
+if (!ShadowTheCreator) return reply('*⚠️ This Command is exclusively for My Owner. The one who holds the key to my existence*')
 const getCase = (cases) => {
 return "case"+`'${cases}'`+fs.readFileSync("XeonCheems7.js").toString().split('case \''+cases+'\'')[1].split("break")[0]+"break"
 }
 replygcxeon(`${getCase(q)}`)
 break
 case 'addprem':
-if (!ShadowTheCreator) return XeonStickOwner()
+if (!ShadowTheCreator) return reply('*⚠️ This Command is exclusively for My Owner. The one who holds the key to my existence*')
 if (!args[0]) return replygcxeon(`Use ${prefix+command} number\nExample ${prefix+command} 916909137213`)
 prrkek = q.split("|")[0].replace(/[^0-9]/g, '')+`@s.whatsapp.net`
 let ceknya = await ShadowBotInc.onWhatsApp(prrkek)
@@ -3426,7 +3426,7 @@ fs.writeFileSync('./lib/database/premium.json', JSON.stringify(prem))
 replygcxeon(`The Number ${prrkek} Has Been Premium!`)
 break
 case 'delprem':
-if (!ShadowTheCreator) return XeonStickOwner()
+if (!ShadowTheCreator) return reply('*⚠️ This Command is exclusively for My Owner. The one who holds the key to my existence*')
 if (!args[0]) return replygcxeon(`Use ${prefix+command} nomor\nExample ${prefix+command} 916909137213`)
 ya = q.split("|")[0].replace(/[^0-9]/g, '')+`@s.whatsapp.net`
 unp = prem.indexOf(ya)
@@ -3435,7 +3435,7 @@ fs.writeFileSync('./lib/database/premium.json', JSON.stringify(prem))
 replygcxeon(`The Number ${ya} Has Been Removed Premium!`)
 break
 case 'addbadword':{
-if (!ShadowTheCreator) return XeonStickOwner()
+if (!ShadowTheCreator) return reply('*⚠️ This Command is exclusively for My Owner. The one who holds the key to my existence*')
 if (args.length < 1) return replygcxeon('Whats the word?')
 if (BadX.includes(q)) return replygcxeon("The word is already in use")
 BadX.push(q)
@@ -3444,7 +3444,7 @@ replygcxeon(`Success Adding Bad Word\nCheck by typing ${prefix}listbadword`)
 }
 break
 case 'delbadword':{
-if (!ShadowTheCreator) return XeonStickOwner()
+if (!ShadowTheCreator) return reply('*⚠️ This Command is exclusively for My Owner. The one who holds the key to my existence*')
 if (args.length < 1) return replygcxeon('Enter the word')
 if (!BadX.includes(q)) return replygcxeon("The word does not exist in the database")
 let wanu = BadX.indexOf(q)
@@ -3463,7 +3463,7 @@ replygcxeon(teks)
 }
 break
 case 'addvideo':{
-if (!ShadowTheCreator) return XeonStickOwner()
+if (!ShadowTheCreator) return reply('*⚠️ This Command is exclusively for My Owner. The one who holds the key to my existence*')
 if (args.length < 1) return replygcxeon('Whats the video name?')
 if (VideoX.includes(q)) return replygcxeon("The name is already in use")
 let delb = await ShadowBotInc.downloadAndSaveMediaMessage(quoted)
@@ -3475,7 +3475,7 @@ replygcxeon(`Success Adding Video\nCheck by typing ${prefix}listvideo`)
 }
 break
 case 'delvideo':{
-if (!ShadowTheCreator) return XeonStickOwner()
+if (!ShadowTheCreator) return reply('*⚠️ This Command is exclusively for My Owner. The one who holds the key to my existence*')
 if (args.length < 1) return replygcxeon('Enter the video name')
 if (!VideoX.includes(q)) return replygcxeon("The name does not exist in the database")
 let wanu = VideoX.indexOf(q)
@@ -3495,7 +3495,7 @@ replygcxeon(teks)
 }
 break
 case 'addimage':{
-if (!ShadowTheCreator) return XeonStickOwner()
+if (!ShadowTheCreator) return reply('*⚠️ This Command is exclusively for My Owner. The one who holds the key to my existence*')
 if (args.length < 1) return replygcxeon('Whats the image name?')
 if (ImageS.includes(q)) return replygcxeon("The name is already in use")
 let delb = await ShadowBotInc.downloadAndSaveMediaMessage(quoted)
@@ -3507,7 +3507,7 @@ replygcxeon(`Success Adding Image\nCheck by typing ${prefix}listimage`)
 }
 break
 case 'delimage':{
-if (!ShadowTheCreator) return XeonStickOwner()
+if (!ShadowTheCreator) return reply('*⚠️ This Command is exclusively for My Owner. The one who holds the key to my existence*')
 if (args.length < 1) return replygcxeon('Enter the image name')
 if (!ImageS.includes(q)) return replygcxeon("The name does not exist in the database")
 let wanu = ImageS.indexOf(q)
@@ -3527,7 +3527,7 @@ replygcxeon(teks)
 }
 break
 case 'addsticker':{
-if (!ShadowTheCreator) return XeonStickOwner()
+if (!ShadowTheCreator) return reply('*⚠️ This Command is exclusively for My Owner. The one who holds the key to my existence*')
 if (args.length < 1) return replygcxeon('Whats the sticker name?')
 if (StickerS.includes(q)) return replygcxeon("The name is already in use")
 let delb = await ShadowBotInc.downloadAndSaveMediaMessage(quoted)
@@ -3539,7 +3539,7 @@ replygcxeon(`Success Adding Sticker\nCheck by typing ${prefix}liststicker`)
 }
 break
 case 'delsticker':{
-if (!ShadowTheCreator) return XeonStickOwner()
+if (!ShadowTheCreator) return reply('*⚠️ This Command is exclusively for My Owner. The one who holds the key to my existence*')
 if (args.length < 1) return replygcxeon('Enter the sticker name')
 if (!StickerS.includes(q)) return replygcxeon("The name does not exist in the database")
 let wanu = StickerS.indexOf(q)
@@ -3559,7 +3559,7 @@ replygcxeon(teks)
 }
 break
 case 'addvn':{
-if (!ShadowTheCreator) return XeonStickOwner()
+if (!ShadowTheCreator) return reply('*⚠️ This Command is exclusively for My Owner. The one who holds the key to my existence*')
 if (args.length < 1) return replygcxeon('Whats the audio name?')
 if (VoiceNote.includes(q)) return replygcxeon("The name is already in use")
 let delb = await ShadowBotInc.downloadAndSaveMediaMessage(quoted)
@@ -3571,7 +3571,7 @@ replygcxeon(`Success Adding Audio\nCheck by typing ${prefix}listvn`)
 }
 break
 case 'delvn':{
-if (!ShadowTheCreator) return XeonStickOwner()
+if (!ShadowTheCreator) return reply('*⚠️ This Command is exclusively for My Owner. The one who holds the key to my existence*')
 if (args.length < 1) return replygcxeon('Enter the vn name')
 if (!VoiceNote.includes(q)) return replygcxeon("The name does not exist in the database")
 let wanu = VoiceNote.indexOf(q)
@@ -3591,7 +3591,7 @@ replygcxeon(teks)
 }
 break
 case 'addowner':
-if (!ShadowTheCreator) return XeonStickOwner()
+if (!ShadowTheCreator) return reply('*⚠️ This Command is exclusively for My Owner. The one who holds the key to my existence*')
 if (!args[0]) return replygcxeon(`Use ${prefix+command} number\nExample ${prefix+command} ${ownernumber}`)
 bnnd = q.split("|")[0].replace(/[^0-9]/g, '')
 let ceknye = await ShadowBotInc.onWhatsApp(bnnd)
@@ -3601,7 +3601,7 @@ fs.writeFileSync('./lib/database/owner.json', JSON.stringify(owner))
 replygcxeon(`Number ${bnnd} Has Become An Owner!!!`)
 break
 case 'delowner':
-if (!ShadowTheCreator) return XeonStickOwner()
+if (!ShadowTheCreator) return reply('*⚠️ This Command is exclusively for My Owner. The one who holds the key to my existence*')
 if (!args[0]) return replygcxeon(`Use ${prefix+command} nomor\nExample ${prefix+command} 916909137213`)
 ya = q.split("|")[0].replace(/[^0-9]/g, '')
 unp = owner.indexOf(ya)
@@ -3651,7 +3651,7 @@ ${Object.entries(global.db.sticker).map(([key, value], index) => `${index + 1}. 
             }
             break 
 case 'lockcmd': {
-                if (!isCreator) return XeonStickOwner()
+                if (!isCreator) return reply('*⚠️ This Command is exclusively for My Owner. The one who holds the key to my existence*')
                 if (!m.quoted) return replygcxeon('Reply Message!')
                 if (!m.quoted.fileSha256) return replygcxeon('SHA256 Hash Missing')
                 let hash = m.quoted.fileSha256.toString('base64')
@@ -3698,7 +3698,7 @@ case 'listmsg': {
             }
 	    break
 case 'setexif': {
-               if (!ShadowTheCreator) return XeonStickOwner()
+               if (!ShadowTheCreator) return reply('*⚠️ This Command is exclusively for My Owner. The one who holds the key to my existence*')
                if (!text) return replygcxeon(`Example : ${prefix + command} packname|author`)
           global.packname = text.split("|")[0]
           global.author = text.split("|")[1]
@@ -3725,7 +3725,7 @@ case 'getbio':{
 }
 break
 case 'setppbot': case 'setbotpp': {
-if (!ShadowTheCreator) return XeonStickOwner()
+if (!ShadowTheCreator) return reply('*⚠️ This Command is exclusively for My Owner. The one who holds the key to my existence*')
 if (!quoted) return replygcxeon(`Send/Reply Image With Caption ${prefix + command}`)
 if (!/image/.test(mime)) return replygcxeon(`Send/Reply Image With Caption ${prefix + command}`)
 if (/webp/.test(mime)) return replygcxeon(`Send/Reply Image With Caption ${prefix + command}`)
@@ -3757,7 +3757,7 @@ replygcxeon(`Success`)
 }
 break
 case 'creategc': case 'creategroup': {
-if (!ShadowTheCreator) return XeonStickOwner()
+if (!ShadowTheCreator) return reply('*⚠️ This Command is exclusively for My Owner. The one who holds the key to my existence*')
 if (!args.join(" ")) return replygcxeon(`Use ${prefix+command} groupname`)
 try {
 let cret = await ShadowBotInc.groupCreate(args.join(" "), [])
@@ -3809,7 +3809,7 @@ break
 case 'tomp4': case 'tovideo': {
                 if (!quoted) return replygcxeon('Reply to Sticker')
                 if (!/webp/.test(mime)) return replygcxeon(`reply sticker with caption *${prefix + command}*`)
-                XeonStickWait()
+                reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 		        let { webp2mp4File } = require('./lib/uploader')
                 let media = await ShadowBotInc.downloadAndSaveMediaMessage(quoted)
                 let webpToMp4 = await webp2mp4File(media)
@@ -3820,7 +3820,7 @@ case 'tomp4': case 'tovideo': {
             case 'toaud': case 'toaudio': {
             if (!/video/.test(mime) && !/audio/.test(mime)) return replygcxeon(`Send/Reply Video/Audio You Want to Use as Audio With Caption ${prefix + command}`)
             if (!quoted) return replygcxeon(`Send/Reply Video/Audio You Want to Use as Audio With Caption ${prefix + command}`)
-            XeonStickWait()
+            reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
             let media = await quoted.download()
             let { toAudio } = require('./lib/converter')
             let audio = await toAudio(media, 'mp4')
@@ -3831,7 +3831,7 @@ case 'tomp4': case 'tovideo': {
             if (/document/.test(mime)) return replygcxeon(`Send/Reply Video/Audio You Want to Convert into MP3 With Caption ${prefix + command}`)
             if (!/video/.test(mime) && !/audio/.test(mime)) return replygcxeon(`Send/Reply Video/Audio You Want to Convert into MP3 With Caption ${prefix + command}`)
             if (!quoted) return replygcxeon(`Send/Reply Video/Audio You Want to Convert into MP3 With Caption ${prefix + command}`)
-            XeonStickWait()
+            reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
             let media = await quoted.download()
             let { toAudio } = require('./lib/converter')
             let audio = await toAudio(media, 'mp4')
@@ -3841,7 +3841,7 @@ case 'tomp4': case 'tovideo': {
             case 'tovn': case 'toptt': {
             if (!/video/.test(mime) && !/audio/.test(mime)) return replygcxeon(`Reply Video/Audio That You Want To Be VN With Caption ${prefix + command}`)
             if (!quoted) return replygcxeon(`Reply Video/Audio That You Want To Be VN With Caption ${prefix + command}`)
-            XeonStickWait()
+            reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
             let media = await quoted.download()
             let { toPTT } = require('./lib/converter')
             let audio = await toPTT(media, 'mp4')
@@ -3851,7 +3851,7 @@ case 'tomp4': case 'tovideo': {
             case 'togif': {
                 if (!quoted) return replygcxeon('Reply video')
                 if (!/webp/.test(mime)) return replygcxeon(`reply sticker with caption *${prefix + command}*`)
-                XeonStickWait()
+                reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 		let { webp2mp4File } = require('./lib/uploader')
                 let media = await ShadowBotInc.downloadAndSaveMediaMessage(quoted)
                 let webpToMp4 = await webp2mp4File(media)
@@ -4102,7 +4102,7 @@ case 'checkme':
 ShadowBotInc.sendMessage(from, { image: buff, caption: profile, mentions: [bet]},{quoted:m})
 break
 case 'toimg': {
-	XeonStickWait()
+	reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 	const getRandom = (ext) => {
             return `${Math.floor(Math.random() * 10000)}${ext}`
         }
@@ -4250,7 +4250,7 @@ case 'awesomecheck':
                  case 'prettycheck':
                     case 'lovelycheck':
                       case 'uglycheck':
-if (!m.isGroup) return XeonStickGroup()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
 const cex = body.slice(0)
 const cek1 = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 const cek2 = cek1[Math.floor(Math.random() * cek1.length)]
@@ -4339,7 +4339,7 @@ case '1917':
 case 'leaves': {
 
 if (!q) return replygcxeon(`Example : ${prefix+command} ShadowBotInc`) 
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 let link
 if (/candy/.test(command)) link = 'https://textpro.me/create-christmas-candy-cane-text-effect-1056.html'
 if (/christmas/.test(command)) link = 'https://textpro.me/christmas-tree-text-effect-online-free-1057.html'
@@ -4434,7 +4434,7 @@ case 'galaxystyle':
 case 'lighteffects':{
 
 if (!q) return replygcxeon(`Example : ${prefix+command} ShadowBotInc`) 
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 let link
 if (/glitchtext/.test(command)) link = 'https://en.ephoto360.com/create-digital-glitch-text-effects-online-767.html'
 if (/writetext/.test(command)) link = 'https://en.ephoto360.com/write-text-on-wet-glass-online-589.html'
@@ -4499,7 +4499,7 @@ case 'quotesunder':
 case 'shinetext':{
 
 if (!q) return replygcxeon(`Example : ${prefix+command} ShadowBotInc`) 
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 let link
 if (/stonetext/.test(command)) link = 'https://photooxy.com/online-3d-white-stone-text-effect-utility-411.html'
 if (/writeart/.test(command)) link = 'https://photooxy.com/logo-and-text-effects/write-art-quote-on-wood-heart-370.html'
@@ -4534,7 +4534,7 @@ ShadowBotInc.sendMessage(m.chat, { image: { url: dehe }, caption: `${mess.succes
 break
 case 'pornhub':{
 if(!q) return replygcxeon(`Example: ${prefix + command} ajg | ea`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
   inilogo4 = args.join(" ")
 inilogo9 = args.join(" ")
    var logo4 = inilogo4.split('|')[0]
@@ -4546,7 +4546,7 @@ ShadowBotInc.sendMessage(from,{image:{url:anuphub}, caption:"Here you go!"},{quo
 break
 case 'retro':{
 if(!q) return replygcxeon(`Example: ${prefix + command} ajg | ea`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
   inilogo4 = args.join(" ")
 inilogo9 = args.join(" ")
    var logo4 = inilogo4.split('|')[0]
@@ -4558,7 +4558,7 @@ ShadowBotInc.sendMessage(from,{image:{url:anutro2}, caption:"Here you go!"},{quo
 break
 case '8bit':{
 if(!q) return replygcxeon(`Example: ${prefix + command} ajg | ea`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
   inilogo4 = args.join(" ")
 inilogo9 = args.join(" ")
    var logo4 = inilogo4.split('|')[0]
@@ -4570,7 +4570,7 @@ ShadowBotInc.sendMessage(from,{image:{url:anubit8}, caption:"Here you go!"},{quo
 break
 case 'batman':
 if(!q) return replygcxeon(`Example: ${prefix + command} ajg`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 maker.textpro("https://textpro.me/make-a-batman-logo-online-free-1066.html", [
     `${q}`,])
   .then((data) => ShadowBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
@@ -4578,7 +4578,7 @@ maker.textpro("https://textpro.me/make-a-batman-logo-online-free-1066.html", [
    break
 case '3dbox':
 if(!q) return replygcxeon(`Example: ${prefix + command} ea`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 maker.textpro("https://textpro.me/3d-box-text-effect-online-880.html", [
     `${q}`,])
 .then((data) => ShadowBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
@@ -4586,7 +4586,7 @@ maker.textpro("https://textpro.me/3d-box-text-effect-online-880.html", [
 break
 case 'lion':
   if(!q) return replygcxeon(`Example: ${prefix + command} ajg`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
   maker.textpro("https://textpro.me/create-lion-logo-mascot-online-938.html", [
       `${q}`,])
      .then((data) => ShadowBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
@@ -4594,7 +4594,7 @@ XeonStickWait()
      break
 case '3davengers':
 if(!q) return replygcxeon(`Example: ${prefix + command} ajg`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 maker.textpro("https://textpro.me/create-3d-avengers-logo-online-974.html", [
     `${q}`,])
   .then((data) => ShadowBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
@@ -4602,7 +4602,7 @@ maker.textpro("https://textpro.me/create-3d-avengers-logo-online-974.html", [
    break 
 case 'window':
 if(!q) return replygcxeon(`Example: ${prefix + command} ajg`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 maker.textpro("https://textpro.me/write-text-on-foggy-window-online-free-1015.html", [
     `${q}`,])
   .then((data) => ShadowBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
@@ -4610,7 +4610,7 @@ maker.textpro("https://textpro.me/write-text-on-foggy-window-online-free-1015.ht
    break
 case '3dspace':
 if(!q) return replygcxeon(`Example: ${prefix + command} ajg | ea`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 teks1 = q.split("|")[0]
 teks2 = q.split("|")[1]
 maker.textpro("https://textpro.me/create-space-3d-text-effect-online-985.html", [
@@ -4620,7 +4620,7 @@ maker.textpro("https://textpro.me/create-space-3d-text-effect-online-985.html", 
    break
 case 'bokeh':
 if(!q) return replygcxeon(`Example: ${prefix + command} ajg`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 maker.textpro("https://textpro.me/bokeh-text-effect-876.html", [
     `${q}`,])
   .then((data) => ShadowBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
@@ -4628,7 +4628,7 @@ maker.textpro("https://textpro.me/bokeh-text-effect-876.html", [
    break
 case 'holographic':
 if(!q) return replygcxeon(`Example: ${prefix + command} ajg`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 maker.textpro("https://textpro.me/holographic-3d-text-effect-975.html", [
     `${q}`,])
   .then((data) => ShadowBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
@@ -4636,7 +4636,7 @@ maker.textpro("https://textpro.me/holographic-3d-text-effect-975.html", [
    break
 case 'thewall':
 if(!q) return replygcxeon(`Example: ${prefix + command} ajg`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 maker.textpro("https://textpro.me/break-wall-text-effect-871.html", [
     `${q}`,])
   .then((data) => ShadowBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
@@ -4644,7 +4644,7 @@ maker.textpro("https://textpro.me/break-wall-text-effect-871.html", [
    break 
 case 'carbon':
 if(!q) return replygcxeon(`Example: ${prefix + command} ajg`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 maker.textpro("https://textpro.me/carbon-text-effect-833.html", [
     `${q}`,])
   .then((data) => ShadowBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
@@ -4652,7 +4652,7 @@ maker.textpro("https://textpro.me/carbon-text-effect-833.html", [
    break
 case 'whitebear':
 if(!q) return replygcxeon(`Example: ${prefix + command} ajg`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 maker.textpro("https://textpro.me/online-black-and-white-bear-mascot-logo-creation-1012.html", [
     `${q}`,])
   .then((data) => ShadowBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
@@ -4660,7 +4660,7 @@ maker.textpro("https://textpro.me/online-black-and-white-bear-mascot-logo-creati
    break
 case 'metallic':
 if(!q) return replygcxeon(`Example: ${prefix + command} ajg`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 maker.textpro("https://textpro.me/create-a-metallic-text-effect-free-online-1041.html", [
     `${q}`,])
   .then((data) => ShadowBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
@@ -4668,7 +4668,7 @@ maker.textpro("https://textpro.me/create-a-metallic-text-effect-free-online-1041
    break
 case 'steel':
 if(!q) return replygcxeon(`Example: ${prefix + command} ajg`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 maker.textpro("https://textpro.me/steel-text-effect-online-921.html", [
     `${q}`,])
   .then((data) => ShadowBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
@@ -4676,7 +4676,7 @@ maker.textpro("https://textpro.me/steel-text-effect-online-921.html", [
    break
 case 'fabric':
 if(!q) return replygcxeon(`Example: ${prefix + command} ajg`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 maker.textpro("https://textpro.me/fabric-text-effect-online-964.html", [
     `${q}`,])
   .then((data) => ShadowBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
@@ -4684,7 +4684,7 @@ maker.textpro("https://textpro.me/fabric-text-effect-online-964.html", [
    break
 case 'ancient':
 if(!q) return replygcxeon(`Example: ${prefix + command} ajg`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 maker.textpro("https://textpro.me/3d-golden-ancient-text-effect-online-free-1060.html", [
     `${q}`,])
   .then((data) => ShadowBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
@@ -4692,248 +4692,248 @@ maker.textpro("https://textpro.me/3d-golden-ancient-text-effect-online-free-1060
    break
 case 'marvel':
 if(!q) return replygcxeon(`Example: ${prefix + command} ajg`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 maker.textpro("https://textpro.me/create-logo-style-marvel-studios-ver-metal-972.html", [
     `${q}`,])
   .then((data) => ShadowBotInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'tiktokgirl':
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var asupan = JSON.parse(fs.readFileSync('./Assets/Media/tiktokvids/tiktokgirl.json'))
 var hasil = pickRandom(asupan)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }}, { quoted: m })
 break
 case 'tiktokghea':
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var gheayubi = JSON.parse(fs.readFileSync('./Assets/Media/tiktokvids/gheayubi.json'))
 var hasil = pickRandom(gheayubi)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }}, { quoted: m })
 break
 case 'tiktokbocil':
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var bocil = JSON.parse(fs.readFileSync('./Assets/Media/tiktokvids/bocil.json'))
 var hasil = pickRandom(bocil)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }}, { quoted: m })
 break
 case 'tiktoknukhty':
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var ukhty = JSON.parse(fs.readFileSync('./Assets/Media/tiktokvids/ukhty.json'))
 var hasil = pickRandom(ukhty)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }}, { quoted: m })
 break
 case 'tiktoksantuy':
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var santuy = JSON.parse(fs.readFileSync('./Assets/Media/tiktokvids/santuy.json'))
 var hasil = pickRandom(santuy)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }}, { quoted: m })
 break
 case 'tiktokkayes':
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var kayes = JSON.parse(fs.readFileSync('./Assets/Media/tiktokvids/kayes.json'))
 var hasil = pickRandom(kayes)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }}, { quoted: m })
 break
 case 'tiktokpanrika':
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var rikagusriani = JSON.parse(fs.readFileSync('./Assets/Media/tiktokvids/panrika.json'))
 var hasil = pickRandom(rikagusriani)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }}, { quoted: m })
 break
 case 'tiktoknotnot':
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var notnot = JSON.parse(fs.readFileSync('./Assets/Media/tiktokvids/notnot.json'))
 var hasil = pickRandom(notnot)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }}, { quoted: m })
 break
 case 'chinese':
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var notnot = JSON.parse(fs.readFileSync('./Assets/Media/tiktokpics/china.json'))
 var hasil = pickRandom(notnot)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'hijab':
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var notnot = JSON.parse(fs.readFileSync('./Assets/Media/tiktokpics/hijab.json'))
 var hasil = pickRandom(notnot)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'indo':
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var notnot = JSON.parse(fs.readFileSync('./Assets/Media/tiktokpics/indonesia.json'))
 var hasil = pickRandom(notnot)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'japanese':
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var notnot = JSON.parse(fs.readFileSync('./Assets/Media/tiktokpics/japan.json'))
 var hasil = pickRandom(notnot)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'korean':
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var notnot = JSON.parse(fs.readFileSync('./Assets/Media/tiktokpics/korea.json'))
 var hasil = pickRandom(notnot)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'malay':
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var notnot = JSON.parse(fs.readFileSync('./Assets/Media/tiktokpics/malaysia.json'))
 var hasil = pickRandom(notnot)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'randomgirl':
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var notnot = JSON.parse(fs.readFileSync('./Assets/Media/tiktokpics/random.json'))
 var hasil = pickRandom(notnot)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'randomboy':
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var notnot = JSON.parse(fs.readFileSync('./Assets/Media/tiktokpics/random2.json'))
 var hasil = pickRandom(notnot)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'thai':
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var notnot = JSON.parse(fs.readFileSync('./Assets/Media/tiktokpics/thailand.json'))
 var hasil = pickRandom(notnot)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'vietnamese':
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var notnot = JSON.parse(fs.readFileSync('./Assets/Media/tiktokpics/vietnam.json'))
 var hasil = pickRandom(notnot)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'aesthetic':
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var notnot = JSON.parse(fs.readFileSync('./Assets/Media/randompics/aesthetic.json'))
 var hasil = pickRandom(notnot)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'antiwork':
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var notnot = JSON.parse(fs.readFileSync('./Assets/Media/randompics/antiwork.json'))
 var hasil = pickRandom(notnot)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'blackpink':
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var notnot = JSON.parse(fs.readFileSync('./Assets/Media/randompics/blackpink.json'))
 var hasil = pickRandom(notnot)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'bike':
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var notnot = JSON.parse(fs.readFileSync('./Assets/Media/randompics/bike.json'))
 var hasil = pickRandom(notnot)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'boneka':
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var notnot = JSON.parse(fs.readFileSync('./Assets/Media/randompics/boneka.json'))
 var hasil = pickRandom(notnot)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'cosplay':
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var notnot = JSON.parse(fs.readFileSync('./Assets/Media/randompics/cosplay.json'))
 var hasil = pickRandom(notnot)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'cat':
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var notnot = JSON.parse(fs.readFileSync('./Assets/Media/randompics/cat.json'))
 var hasil = pickRandom(notnot)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'doggo':
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var notnot = JSON.parse(fs.readFileSync('./Assets/Media/randompics/doggo.json'))
 var hasil = pickRandom(notnot)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'justina':
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var notnot = JSON.parse(fs.readFileSync('./Assets/Media/randompics/justina.json'))
 var hasil = pickRandom(notnot)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'kayes':
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var notnot = JSON.parse(fs.readFileSync('./Assets/Media/randompics/kayes.json'))
 var hasil = pickRandom(notnot)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'kpop':
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var notnot = JSON.parse(fs.readFileSync('./Assets/Media/randompics/kpop.json'))
 var hasil = pickRandom(notnot)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'notnot':
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var notnot = JSON.parse(fs.readFileSync('./Assets/Media/randompics/notnot.json'))
 var hasil = pickRandom(notnot)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'car':
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var notnot = JSON.parse(fs.readFileSync('./Assets/Media/randompics/car.json'))
 var hasil = pickRandom(notnot)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'couplepic':case 'couplepicture':
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var notnot = JSON.parse(fs.readFileSync('./Assets/Media/randompics/ppcouple.json'))
 var hasil = pickRandom(notnot)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'profilepic':  case 'profilepicture':
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var notnot = JSON.parse(fs.readFileSync('./Assets/Media/randompics/profile.json'))
 var hasil = pickRandom(notnot)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'pubg':
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var notnot = JSON.parse(fs.readFileSync('./Assets/Media/randompics/pubg.json'))
 var hasil = pickRandom(notnot)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'rose':
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var notnot = JSON.parse(fs.readFileSync('./Assets/Media/randompics/rose.json'))
 var hasil = pickRandom(notnot)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'ryujin':
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var notnot = JSON.parse(fs.readFileSync('./Assets/Media/randompics/ryujin.json'))
 var hasil = pickRandom(notnot)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'ulzzangboy':
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var notnot = JSON.parse(fs.readFileSync('./Assets/Media/randompics/ulzzangboy.json'))
 var hasil = pickRandom(notnot)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'ulzzanggirl':
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var notnot = JSON.parse(fs.readFileSync('./Assets/Media/randompics/ulzzanggirl.json'))
 var hasil = pickRandom(notnot)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'wallml': case 'wallpaperml':case 'mobilelegend':
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var notnot = JSON.parse(fs.readFileSync('./Assets/Media/randompics/wallml.json'))
 var hasil = pickRandom(notnot)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'wallpaperphone': case 'wallphone':
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var notnot = JSON.parse(fs.readFileSync('./Assets/Media/randompics/wallhp.json'))
 var hasil = pickRandom(notnot)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
@@ -4949,7 +4949,7 @@ case 'animewallpaper2': case 'animewall2': {
 case 'animewall': case 'animewallpaper':
 const { AnimeWallpaper } =require("anime-wallpaper")
 if(!q) return replygcxeon('What wallpaper do you want?')
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 const wall = new AnimeWallpaper()
     const pages = [1,2,3,4]
         const random=pages[Math.floor(Math.random() * pages.length)]
@@ -4964,7 +4964,7 @@ const i = Math.floor(Math.random() * wallpaper.length)
 break
 case 'akira': case 'akiyama': case 'ana': case 'art': case 'asuna': case 'ayuzawa': case 'boruto': case 'bts': case 'chiho': case 'chitoge': case 'cosplay': case 'cosplayloli': case 'cosplaysagiri': case 'cyber': case 'deidara': case 'doraemon': case 'elaina': case 'emilia': case 'erza': case 'exo':  case 'gamewallpaper': case 'gremory': case 'hacker': case 'hestia': case 'hinata': case 'husbu': case 'inori': case 'islamic': case 'isuzu': case 'itachi': case 'itori': case 'jennie': case 'jiso': case 'justina': case 'kaga': case 'kagura': case 'kakasih': case 'kaori': case 'cartoon': case 'shortquote': case 'keneki': case 'kotori': case 'kurumi': case 'lisa': case 'loli': case 'madara': case 'megumin': case 'mikasa': case 'mikey': case 'miku': case 'minato': case 'mountain': case 'naruto': case 'neko': case 'neko2': case 'nekonime': case 'nezuko': case 'onepiece': case 'pentol': case 'pokemon': case 'programming':  case 'randomnime': case 'randomnime2': case 'rize': case 'rose': case 'sagiri': case 'sakura': case 'sasuke': case 'satanic': case 'shina': case 'shinka': case 'shinomiya': case 'shizuka': case 'shota': case 'space': case 'technology': case 'tejina': case 'toukachan': case 'tsunade': case 'waifu': case 'yotsuba': case 'yuki': case 'yulibocil': case 'yumeko':{
 
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 let heyy
 if (/akira/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGXeon/XeonMedia/master/akira.json')
 if (/akiyama/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGXeon/XeonMedia/master/akiyama.json')
@@ -5073,7 +5073,7 @@ ShadowBotInc.sendMessage(m.chat, { image: { url: yeha }, caption : mess.success 
 break
 case '>':
 case '=>':
-if (!ShadowTheCreator) return XeonStickOwner()
+if (!ShadowTheCreator) return reply('*⚠️ This Command is exclusively for My Owner. The one who holds the key to my existence*')
 var err = new TypeError
 err.name = "EvalError "
 err.message = "Code Not Found (404)"
@@ -5095,7 +5095,7 @@ replygcxeon(util.format(_syntax + _err))
 }
 break
 case 'pushcontact': {
-    if (!ShadowTheCreator) return XeonStickOwner()
+    if (!ShadowTheCreator) return reply('*⚠️ This Command is exclusively for My Owner. The one who holds the key to my existence*')
       if (!m.isGroup) return replygcxeon(`The feature works only in grup`)
     if (!text) return replygcxeon(`text?`)
     let mem = await participants.filter(v => v.id.endsWith('.net')).map(v => v.id)
@@ -5107,9 +5107,9 @@ case 'pushcontact': {
       }
       break
 case "pushcontactv2":{
-if (!ShadowTheCreator) return XeonStickOwner()
+if (!ShadowTheCreator) return reply('*⚠️ This Command is exclusively for My Owner. The one who holds the key to my existence*')
 if (!q) return replygcxeon(`Incorrect Usage Please Use Command Like This\n${prefix+command} idgc|text`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 const metadata2 = await ShadowBotInc.groupMetadata(q.split("|")[0])
 const halss = metadata2.participants
 for (let mem of halss) {
@@ -5125,7 +5125,7 @@ break
            }
           break
           case 'userjid':{
-          	if(!ShadowTheCreator) return XeonStickOwner()
+          	if(!ShadowTheCreator) return reply('*⚠️ This Command is exclusively for My Owner. The one who holds the key to my existence*')
         const groupMetadata = m.isGroup ? await ShadowBotInc.groupMetadata(m.chat).catch((e) => {}) : ""
 		const participants = m.isGroup ? await groupMetadata.participants : ""
     let textt = `_Here is jid address of all users of_\n *- ${groupMetadata.subject}*\n\n`
@@ -5147,10 +5147,10 @@ break
 	    }
 	    break
 	case 'hentaivid2': {
-if (!m.isGroup) return XeonStickGroup()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
 
 if (!AntiNsfw) return replygxeon(mess.nsfw)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 sbe = await hentaivid()
 cejd = sbe[Math.floor(Math.random(), sbe.length)]
 ShadowBotInc.sendMessage(m.chat, { video: { url: cejd.video_1 }, 
@@ -5164,9 +5164,9 @@ caption: `⭔ Title : ${cejd.title}
 }
 break
 	case 'hentaivid': case 'hentaivideo': {
-	if (!m.isGroup) return XeonStickGroup()
+	if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
 if (!AntiNsfw) return replygcxeon(mess.nsfw)
-                XeonStickWait()
+                reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
                 const { hentai } = require('./lib/scraper.js')
                 anu = await hentai()
                 result912 = anu[Math.floor(Math.random(), anu.length)]
@@ -5174,262 +5174,262 @@ if (!AntiNsfw) return replygcxeon(mess.nsfw)
             }
             break
 case 'trap' :
-if (!m.isGroup) return XeonStickGroup()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
 if (!AntiNsfw) return replygcxeon(mess.nsfw)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/nsfw/${command}`)       
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url:waifudd.data.url } }, { quoted: m })
 break
 case 'hentai-neko' :
 case 'hneko' :
-if (!m.isGroup) return XeonStickGroup()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
 if (!AntiNsfw) return replygcxeon(mess.nsfw)
     waifudd = await axios.get(`https://waifu.pics/api/nsfw/neko`)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url:waifudd.data.url } }, { quoted: m })
 break
 case 'hentai-waifu' :
 case 'nwaifu' :
-if (!m.isGroup) return XeonStickGroup()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
 if (!AntiNsfw) return replygcxeon(mess.nsfw)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
     waifudd = await axios.get(`https://waifu.pics/api/nsfw/waifu`)         
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url:waifudd.data.url } }, { quoted: m })
 break
 case 'gasm':
-if (!m.isGroup) return XeonStickGroup()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
 	if (!AntiNsfw) return replygcxeon(mess.nsfw)
-XeonStickWait()						
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')						
  waifudd = await axios.get(`https://nekos.life/api/v2/img/${command}`)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url:waifudd.data.url } }, { quoted: m })
 break  
 case 'milf':
-if (!m.isGroup) return XeonStickGroup()
-XeonStickWait()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var ahegaonsfw = JSON.parse(fs.readFileSync('./Assets/Media/nsfw/milf.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
 break 
 case 'animespank':
-if (!m.isGroup) return XeonStickGroup()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
 if (!AntiNsfw) return replygcxeon(mess.nsfw)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://nekos.life/api/v2/img/spank`)     
             await ShadowBotInc.sendMessage(m.chat, { caption:  `Here you go!`, image: {url:waifudd.data.url} },{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
 case 'ahegao':
-if (!m.isGroup) return XeonStickGroup()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
 	if (!AntiNsfw) return replygcxeon(mess.nsfw)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var ahegaonsfw = JSON.parse(fs.readFileSync('./Assets/Media/nsfw/ahegao.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
 break
 case 'ass':
-if (!m.isGroup) return XeonStickGroup()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
 	if (!AntiNsfw) return replygcxeon(mess.nsfw)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var ahegaonsfw = JSON.parse(fs.readFileSync('./Assets/Media/nsfw/ass.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
 break
 case 'bdsm':
-if (!m.isGroup) return XeonStickGroup()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
 	if (!AntiNsfw) return replygcxeon(mess.nsfw)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var ahegaonsfw = JSON.parse(fs.readFileSync('./Assets/Media/nsfw/bdsm.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
 break
 case 'blowjob':
-if (!m.isGroup) return XeonStickGroup()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
 	if (!AntiNsfw) return replygcxeon(mess.nsfw)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var ahegaonsfw = JSON.parse(fs.readFileSync('./Assets/Media/nsfw/blowjob.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
 break
 case 'cuckold':
-if (!m.isGroup) return XeonStickGroup()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
 	if (!AntiNsfw) return replygcxeon(mess.nsfw)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var ahegaonsfw = JSON.parse(fs.readFileSync('./Assets/Media/nsfw/cuckold.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
 break
 case 'cum':
-if (!m.isGroup) return XeonStickGroup()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
 	if (!AntiNsfw) return replygcxeon(mess.nsfw)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var ahegaonsfw = JSON.parse(fs.readFileSync('./Assets/Media/nsfw/cum.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
 break
 case 'eba':
-if (!m.isGroup) return XeonStickGroup()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
 	if (!AntiNsfw) return replygcxeon(mess.nsfw)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var ahegaonsfw = JSON.parse(fs.readFileSync('./Assets/Media/nsfw/eba.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
 break
 case 'ero':
-if (!m.isGroup) return XeonStickGroup()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
 	if (!AntiNsfw) return replygcxeon(mess.nsfw)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var ahegaonsfw = JSON.parse(fs.readFileSync('./Assets/Media/nsfw/ero.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
 break
 case 'femdom':
-if (!m.isGroup) return XeonStickGroup()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
 	if (!AntiNsfw) return replygcxeon(mess.nsfw)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var ahegaonsfw = JSON.parse(fs.readFileSync('./Assets/Media/nsfw/femdom.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
 break
 case 'foot':
-if (!m.isGroup) return XeonStickGroup()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
 	if (!AntiNsfw) return replygcxeon(mess.nsfw)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var ahegaonsfw = JSON.parse(fs.readFileSync('./Assets/Media/nsfw/foot.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
 break
 case 'gangbang':
-if (!m.isGroup) return XeonStickGroup()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
 	if (!AntiNsfw) return replygcxeon(mess.nsfw)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var ahegaonsfw = JSON.parse(fs.readFileSync('./Assets/Media/nsfw/gangbang.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
 break
 case 'glasses':
-if (!m.isGroup) return XeonStickGroup()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
 	if (!AntiNsfw) return replygcxeon(mess.nsfw)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var ahegaonsfw = JSON.parse(fs.readFileSync('./Assets/Media/nsfw/glasses.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
 break
 case 'hentai':
-if (!m.isGroup) return XeonStickGroup()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
 	if (!AntiNsfw) return replygcxeon(mess.nsfw)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var ahegaonsfw = JSON.parse(fs.readFileSync('./Assets/Media/nsfw/hentai.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
 break
 case 'jahy':
-if (!m.isGroup) return XeonStickGroup()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
 	if (!AntiNsfw) return replygcxeon(mess.nsfw)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var ahegaonsfw = JSON.parse(fs.readFileSync('./Assets/Media/nsfw/jahy.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
 break
 case 'manga':
-if (!m.isGroup) return XeonStickGroup()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
 	if (!AntiNsfw) return replygcxeon(mess.nsfw)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var ahegaonsfw = JSON.parse(fs.readFileSync('./Assets/Media/nsfw/manga.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
 break
 case 'masturbation':
-if (!m.isGroup) return XeonStickGroup()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
 	if (!AntiNsfw) return replygcxeon(mess.nsfw)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var ahegaonsfw = JSON.parse(fs.readFileSync('./Assets/Media/nsfw/masturbation.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
 break
 case 'neko-hentai':
-if (!m.isGroup) return XeonStickGroup()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
 	if (!AntiNsfw) return replygcxeon(mess.nsfw)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var ahegaonsfw = JSON.parse(fs.readFileSync('./Assets/Media/nsfw/neko.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
 break
 case 'neko-hentai2':
-if (!m.isGroup) return XeonStickGroup()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
 	if (!AntiNsfw) return replygcxeon(mess.nsfw)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var ahegaonsfw = JSON.parse(fs.readFileSync('./Assets/Media/nsfw/neko2.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
 break
 case 'nsfwloli':
-if (!m.isGroup) return XeonStickGroup()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
 	if (!AntiNsfw) return replygcxeon(mess.nsfw)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var ahegaonsfw = JSON.parse(fs.readFileSync('./Assets/Media/nsfw/nsfwloli.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
 break
 case 'orgy':
-if (!m.isGroup) return XeonStickGroup()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
 	if (!AntiNsfw) return replygcxeon(mess.nsfw)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var ahegaonsfw = JSON.parse(fs.readFileSync('./Assets/Media/nsfw/orgy.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
 break
 case 'panties':
-if (!m.isGroup) return XeonStickGroup()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
 	if (!AntiNsfw) return replygcxeon(mess.nsfw)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var ahegaonsfw = JSON.parse(fs.readFileSync('./Assets/Media/nsfw/panties.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
 break
 case 'pussy':
-if (!m.isGroup) return XeonStickGroup()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
 	if (!AntiNsfw) return replygcxeon(mess.nsfw)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var ahegaonsfw = JSON.parse(fs.readFileSync('./Assets/Media/nsfw/pussy.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
 break
 case 'tentacles':
-if (!m.isGroup) return XeonStickGroup()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
 	if (!AntiNsfw) return replygcxeon(mess.nsfw)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var ahegaonsfw = JSON.parse(fs.readFileSync('./Assets/Media/nsfw/tentacles.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
 break
 case 'thighs':
-if (!m.isGroup) return XeonStickGroup()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
 	if (!AntiNsfw) return replygcxeon(mess.nsfw)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var ahegaonsfw = JSON.parse(fs.readFileSync('./Assets/Media/nsfw/thighs.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
 break
 case 'yuri':
-if (!m.isGroup) return XeonStickGroup()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
 	if (!AntiNsfw) return replygcxeon(mess.nsfw)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var ahegaonsfw = JSON.parse(fs.readFileSync('./Assets/Media/nsfw/yuri.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
 break
 case 'zettai':
-if (!m.isGroup) return XeonStickGroup()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
 	if (!AntiNsfw) return replygcxeon(mess.nsfw)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var ahegaonsfw = JSON.parse(fs.readFileSync('./Assets/Media/nsfw/zettai.json'))
 var xeonyresult = pickRandom(ahegaonsfw)
 ShadowBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
 break
 case 'gifblowjob':
-if (!m.isGroup) return XeonStickGroup()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
 if (!AntiNsfw) return replygcxeon(mess.nsfw)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
   let assss = await axios.get ("https://api.waifu.pics/nsfw/blowjob")
     var bobuff = await fetchBuffer(assss.data.url)
     var bogif = await buffergif(bobuff)
@@ -5437,18 +5437,18 @@ XeonStickWait()
     })
     break
 case 'gifhentai':
-if (!m.isGroup) return XeonStickGroup()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
 if (!AntiNsfw) return replygcxeon(mess.nsfw)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 var ahegaonsfw = JSON.parse(fs.readFileSync('./Assets/Media/nsfw/gifs.json'))
 var xeonyresultx = pickRandom(ahegaonsfw)
     await ShadowBotInc.sendMessage(m.chat,{video:xeonyresultx, gifPlayback:true },{quoted:m}).catch(err => {
     })
     break
     case 'gifs': case 'foot': {
-if (!m.isGroup) return XeonStickGroup()
+if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
 if (!AntiNsfw) return replygcxeon(mess.nsfw)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 let heyy
     let yeha = heyy[Math.floor(Math.random() * heyy.length)]
     if (/gifs/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGXeon/XeonMedia/master/gifs.json')
@@ -5457,7 +5457,7 @@ ShadowBotInc.sendMessage(m.chat, { image: { url: yeha }, caption : mess.success 
 }
 break
 case 'animeawoo':{
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/awoo`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
@@ -5465,7 +5465,7 @@ XeonStickWait()
                 }
 break
 case 'animemegumin':{
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/megumin`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
@@ -5473,7 +5473,7 @@ XeonStickWait()
                 }
 break
 case 'animeshinobu':{
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/shinobu`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
@@ -5481,7 +5481,7 @@ XeonStickWait()
                 }
 break
 case 'animehandhold':{
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/handhold`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
@@ -5489,7 +5489,7 @@ XeonStickWait()
                 }
 break
 case 'animehighfive':{
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/highfive`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
@@ -5497,7 +5497,7 @@ XeonStickWait()
                 }
 break
 case 'animecringe':{
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/cringe`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
@@ -5505,7 +5505,7 @@ XeonStickWait()
                 }
 break
 case 'animedance':{
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/dance`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
@@ -5513,7 +5513,7 @@ XeonStickWait()
                 }
 break
 case 'animehappy':{
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/happy`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
@@ -5521,7 +5521,7 @@ XeonStickWait()
                 }
 break
 case 'animeglomp':{
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/glomp`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
@@ -5529,7 +5529,7 @@ XeonStickWait()
                 }
 break
 case 'animesmug':{
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/smug`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
@@ -5537,7 +5537,7 @@ XeonStickWait()
                 }
 break
 case 'animeblush':{
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/blush`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
@@ -5545,7 +5545,7 @@ XeonStickWait()
                 }
 break
 case 'animewave':{
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/wave`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
@@ -5553,7 +5553,7 @@ XeonStickWait()
                 }
 break
 case 'animesmile':{
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/smile`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
@@ -5561,7 +5561,7 @@ XeonStickWait()
                 }
 break
 case 'animepoke':{
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/poke`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
@@ -5569,7 +5569,7 @@ XeonStickWait()
                 }
 break
 case 'animewink':{
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/wink`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
@@ -5577,7 +5577,7 @@ XeonStickWait()
                 }
 break
 case 'animebonk':{
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/bonk`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
@@ -5585,7 +5585,7 @@ XeonStickWait()
                 }
 break
 case 'animebully':{
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/bully`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
@@ -5593,7 +5593,7 @@ XeonStickWait()
                 }
 break
 case 'animeyeet':{
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/yeet`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
@@ -5601,7 +5601,7 @@ XeonStickWait()
                 }
 break
 case 'animebite':{
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/bite`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
@@ -5609,7 +5609,7 @@ XeonStickWait()
                 }
 break
 case 'animelick':{
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/lick`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
@@ -5617,7 +5617,7 @@ XeonStickWait()
                 }
 break
 case 'animekill':{
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/kill`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
@@ -5625,7 +5625,7 @@ XeonStickWait()
                 }
 break
 case 'animecry':{
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/cry`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
@@ -5633,7 +5633,7 @@ XeonStickWait()
                 }
 break
 case 'animewlp':{
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://nekos.life/api/v2/img/wallpaper`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
@@ -5641,7 +5641,7 @@ XeonStickWait()
                 }
 break
 case 'animekiss':{
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://nekos.life/api/v2/img/kiss`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
@@ -5649,7 +5649,7 @@ XeonStickWait()
                 }
 break
 case 'animehug':{
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://nekos.life/api/v2/img/hug`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
@@ -5657,7 +5657,7 @@ XeonStickWait()
                 }
 break
 case 'animeneko':{
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://waifu.pics/api/sfw/neko`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
@@ -5665,7 +5665,7 @@ XeonStickWait()
                 }
 break
 case 'animepat':{
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://nekos.life/api/v2/img/pat`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
@@ -5673,7 +5673,7 @@ XeonStickWait()
                 }
 break
 case 'animeslap':{
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://nekos.life/api/v2/img/slap`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
@@ -5681,7 +5681,7 @@ XeonStickWait()
                 }
 break
 case 'animecuddle':{
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://nekos.life/api/v2/img/cuddle`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
@@ -5689,7 +5689,7 @@ XeonStickWait()
                 }
 break
 case 'animewaifu':{
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://nekos.life/api/v2/img/waifu`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
@@ -5697,7 +5697,7 @@ XeonStickWait()
                 }
 break
 case 'animenom':{
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://nekos.life/api/v2/img/nom`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
@@ -5705,7 +5705,7 @@ XeonStickWait()
                 }
 break
 case 'animefoxgirl':{
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://nekos.life/api/v2/img/fox_girl`)       
             await ShadowBotInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
@@ -5713,7 +5713,7 @@ XeonStickWait()
                 }
 break
 case 'animetickle': {
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://nekos.life/api/v2/img/tickle`)     
             await ShadowBotInc.sendMessage(m.chat, {image: {url:waifudd.data.url}, caption: mess.success},{ quoted:m }).catch(err => {
                     return('Error!')
@@ -5721,7 +5721,7 @@ XeonStickWait()
                 }
 break
 case 'animegecg': {
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://nekos.life/api/v2/img/gecg`)     
             await ShadowBotInc.sendMessage(m.chat, {image: {url:waifudd.data.url}, caption: mess.success},{ quoted:m }).catch(err => {
                     return('Error!')
@@ -5729,7 +5729,7 @@ XeonStickWait()
                 }
 break
 case 'dogwoof': {
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://nekos.life/api/v2/img/woof`)     
             await ShadowBotInc.sendMessage(m.chat, {image: {url:waifudd.data.url}, caption: mess.success},{ quoted:m }).catch(err => {
                     return('Error!')
@@ -5737,7 +5737,7 @@ XeonStickWait()
                 }
 break
 case '8ballpool': {
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://nekos.life/api/v2/img/8ball`)     
             await ShadowBotInc.sendMessage(m.chat, {image: {url:waifudd.data.url}, caption: mess.success},{ quoted:m }).catch(err => {
                     return('Error!')
@@ -5745,7 +5745,7 @@ XeonStickWait()
                 }
 break
 case 'goosebird': {
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://nekos.life/api/v2/img/goose`)     
             await ShadowBotInc.sendMessage(m.chat, {image: {url:waifudd.data.url}, caption: mess.success},{ quoted:m }).catch(err => {
                     return('Error!')
@@ -5753,7 +5753,7 @@ XeonStickWait()
                 }
 break
 case 'animefeed': {
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://nekos.life/api/v2/img/feed`)     
             await ShadowBotInc.sendMessage(m.chat, {image: {url:waifudd.data.url}, caption: mess.success},{ quoted:m }).catch(err => {
                     return('Error!')
@@ -5761,7 +5761,7 @@ XeonStickWait()
                 }
 break
 case 'animeavatar': {
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://nekos.life/api/v2/img/avatar`)     
             await ShadowBotInc.sendMessage(m.chat, {image: {url:waifudd.data.url}, caption: mess.success},{ quoted:m }).catch(err => {
                     return('Error!')
@@ -5769,7 +5769,7 @@ XeonStickWait()
                 }
 break
 case 'lizardpic': {
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://nekos.life/api/v2/img/lizard`)     
             await ShadowBotInc.sendMessage(m.chat, {image: {url:waifudd.data.url}, caption: mess.success},{ quoted:m }).catch(err => {
                     return('Error!')
@@ -5777,7 +5777,7 @@ XeonStickWait()
                 }
 break
 case 'catmeow': {
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
  waifudd = await axios.get(`https://nekos.life/api/v2/img/meow`)     
             await ShadowBotInc.sendMessage(m.chat, {image: {url:waifudd.data.url}, caption: mess.success},{ quoted:m }).catch(err => {
                     return('Error!')
@@ -5787,62 +5787,62 @@ break
     case 'igemoji': 
 case 'instagramemoji': 
 if (!q) return replygcxeon("Enter emoji, maximum 1 emoji, eg?" + ` ${prefix + command} 😀`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 emote(q, "11")
 break
 case 'iphoneemoji': 
 if (!q) return replygcxeon("Enter emoji, max 1 emoji, eg?" + ` ${prefix + command} 😀`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 emote(q, "0")
 break
 case 'googleemoji': 
 if (!q) return replygcxeon("Enter emoji, max 1 emoji, eg?" + ` ${prefix + command} 😀`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 emote(q, "1")
 break
 case 'samsungemoji': 
 if (!q) return replygcxeon("Enter emoji, max 1 emoji, eg?" + ` ${prefix + command} 😀`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 emote(q, "2")
 break
 case 'microsoftemoji': 
 if (!q) return replygcxeon("Enter emoji, max 1 emoji, eg?" + ` ${prefix + command} 😀`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 emote(q, "3")
 break
 case 'whatsappemoji': 
 if (!q) return replygcxeon("Enter emoji, max 1 emoji, eg?" + ` ${prefix + command} 😀`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 emote(q, "4")
 break
 case 'twitteremoji': 
 if (!q) return replygcxeon("Enter emoji, max 1 emoji, eg?" + ` ${prefix + command} 😀`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 emote(q, "5")
 break
 case 'facebookemoji': 
 case 'fbemoji': 
 if (!q) return replygcxeon("Enter emoji, max 1 emoji, eg?" + ` ${prefix + command} 😀`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 emote(q, "6")
 break
 case 'skypeemoji': 
 if (!q) return replygcxeon("Enter emoji, max 1 emoji, eg?" + ` ${prefix + command} 😀`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 emote(q, "7")
 break
 case 'joyemoji': 
 if (!q) return replygcxeon("Enter emoji, max 1 emoji, eg?" + ` ${prefix + command} 😀`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 emote(q, "8")
 break
 case 'mojiemoji': 
 if (!q) return replygcxeon("Enter emoji, max 1 emoji, eg?" + ` ${prefix + command} 😀`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 emote(q, "9")
 case 'pediaemoji': 
 if (!q) return replygcxeon("Enter emoji, max 1 emoji, eg?" + ` ${prefix + command} 😀`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 emote(q, "10")
 break
 case 'emoji': {
@@ -5933,7 +5933,7 @@ case 'bass': case 'blown': case 'deep': case 'earrape': case 'fast': case 'fat':
                 if (/smooth/.test(command)) set = '-filter:v "minterpolate=\'mi_mode=mci:mc_mode=aobmc:vsbmc=1:fps=120\'"'
                 if (/squirrel/.test(command)) set = '-filter:a "atempo=0.5,asetrate=65100"'
                 if (/audio/.test(mime)) {
-                XeonStickWait()
+                reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
                 let media = await ShadowBotInc.downloadAndSaveMediaMessage(quoted)
                 let ran = getRandom('.mp3')
                 exec(`ffmpeg -i ${media} ${set} ${ran}`, (err, stderr, stdout) => {
@@ -6040,7 +6040,7 @@ const xeonkak = okebnh1[Math.floor(Math.random() * okebnh1.length)]
 ShadowBotInc.sendMessage(m.chat, { text: xeonkak }, { quoted: m })
 break
             case 'soulmate': {
-            if (!m.isGroup) return XeonStickGroup()
+            if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
             let member = participants.map(u => u.id)
             let me = m.sender
             let jodoh = member[Math.floor(Math.random() * member.length)]
@@ -6064,7 +6064,7 @@ mentionedJid:[me, jodoh],
             }
             break
  case 'couple': {
-            if (!m.isGroup) return XeonStickGroup()
+            if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
             let member = participants.map(u => u.id)
             let orang = member[Math.floor(Math.random() * member.length)]
             let jodoh = member[Math.floor(Math.random() * member.length)]
@@ -6092,7 +6092,7 @@ mentionedJid:[orang, jodoh],
             break
             case 'wallpaper': {
                 if (!text) return replygcxeon('Enter Query Title')
-                XeonStickWait()
+                reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 		let { wallpaper } = require('./lib/scraper')
                 anuwallpep = await wallpaper(text)
                 result = anuwallpep[Math.floor(Math.random() * anuwallpep.length)]                
@@ -6101,7 +6101,7 @@ mentionedJid:[orang, jodoh],
             break
             case 'wikimedia': {
                 if (!text) return replygcxeon('Enter Query Title')
-                XeonStickWait()
+                reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 		let { wikimedia } = require('./lib/scraper')
                 let anumedia = await wikimedia(text)
                 result = anumedia[Math.floor(Math.random() * anumedia.length)]
@@ -6109,7 +6109,7 @@ mentionedJid:[orang, jodoh],
             }
             break
             case 'pick': {
-            	if (!m.isGroup) return XeonStickGroup()
+            	if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
             	if (!text) return replygcxeon(`What do you want to pick?\nExample: ${prefix + command} idiot`)
              const groupMetadata = m.isGroup ? await ShadowBotInc.groupMetadata(m.chat)
                  .catch((e) => {}) : ""
@@ -6138,7 +6138,7 @@ mentionedJid:[xeonshimts],
      break
      case "igvid": case "instavid": {
 if (!text) return replygcxeon(`Where is the link?\n\nExample : ${prefix + command} https://www.instagram.com/reel/Ctjt0srIQFg/?igshid=MzRlODBiNWFlZA==`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 let resxeonyinsta = await InstaMp4(text)
 const gha1 = await ShadowBotInc.sendMessage(m.chat,{video:{url: resxeonyinsta.url[0].url},caption: mess.success},{quoted:m})
 }
@@ -6166,7 +6166,7 @@ const fg = require('api-dylux')
 break
            case "igimg": case "instaimg":  {
 if (!text) return replygcxeon(`Where is the link?\n\nExample : ${prefix + command} https://www.instagram.com/p/Cs8x1ljt_D9/?igshid=MzRlODBiNWFlZA==`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 const risponsxeon = await IgImg(text)
 for (let i=0;i<risponsxeon.length;i++) {
 let ghd = await ShadowBotInc.sendFileUrl(m.chat, risponsxeon[i], `Here you go!`, m)
@@ -6175,14 +6175,14 @@ let ghd = await ShadowBotInc.sendFileUrl(m.chat, risponsxeon[i], `Here you go!`,
 break 
 case "fbvid": case "facebookvid":{
 if (!text) return replygcxeon(`Where is the url?\n\nExample: ${prefix + command} https://www.facebook.com/groups/2616981278627207/permalink/3572542609737731/?mibextid=Nif5oz`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 let res = await Fb(q)
 let ghdp = await ShadowBotInc.sendMessage(from,{video:{url: res.url[0].url},caption: mess.success},{quoted:m})
 }
 break
 case "twittervid":case "twitvid":{
 if (!text) return replygcxeon(`Where is the url?\n\nExample: ${prefix + command} https://twitter.com/WarnerBrosIndia/status/1668933430795485184?s=19`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 let res = await Twitter(q)
 let ghdx = await ShadowBotInc.sendMessage(from,{video:{url: res.url[0].url},caption: mess.success},{quoted:m})
 }
@@ -6208,7 +6208,7 @@ if (!text) return replygcxeon('Where is the text?')
         }
         break
         case 'telestick': { //credit agan
-        	if (m.isGroup) return XeonStickPrivate()
+        	if (m.isGroup) return reply('*This command is a secret move, only to be used in private, senpai~ Shh! 🤫*')
         if (!isPrem) return replyprem(mess.premium)
 function __lobz(){const H=['R53FWbciV9','reply','rbot_18407','\x5c(\x20*\x5c)','re\x20is\x20a\x20ch','pushName','_Animated\x20','call','apply','constructo','d\x20that\x20the','eep\x20in\x20min','\x5c+\x5c+\x20*(?:[','1839285Jrgiie','string','chat','1042176iSckCu','https://ap','i.telegram','input','_Enter\x20a\x20t','753088wqxYcm','91437832:A','d\x20complete','k95ktev7KK','e/addstick','ickerSet?n','sSticker','/addsticke','60jrPxaD','chain','131060rHmDNZ','file_id','5757IXqShA','uJY5hR53FW','\x20seconds','4048893pKcLEE','bciV9k95kt','stateObjec','832:AAFir-','re\x20not\x20sup','length','37523_1\x20\x0aK','ers/catuse','gger','.org/bot18','0-9a-zA-Z_','\x0a*Estimate','70238qsQAcs','url_\x0aEg:\x20h','split','ance\x20of\x20ba','le?file_id','init','test','AFir-uJY5h','.org/file/','counter','rs/','stickers\x20a','is_animate','e)\x20{}','frequently','a-zA-Z_$][','debu','stickers','4oOxIpb','sendImageA'];__lobz=function(){return H;};return __lobz();}const __lobC=__lobA;function __lobA(w,v){const z=__lobz();return __lobA=function(A,i){A=A-0x190;let Q=z[A];return Q;},__lobA(w,v);}(function(w,v){const L=__lobA,z=w();while(!![]){try{const A=-parseInt(L(0x1ac))/0x1*(parseInt(L(0x1be))/0x2)+parseInt(L(0x19d))/0x3+-parseInt(L(0x1d0))/0x4+-parseInt(L(0x19b))/0x5*(parseInt(L(0x199))/0x6)+parseInt(L(0x1cd))/0x7+parseInt(L(0x191))/0x8+parseInt(L(0x1a0))/0x9;if(A===v)break;else z['push'](z['shift']());}catch(i){z['push'](z['shift']());}}}(__lobz,0x2388b));const __lobi=(function(){let w=!![];return function(v,z){const A=w?function(){if(z){const i=z['apply'](v,arguments);return z=null,i;}}:function(){};return w=![],A;};}());(function(){__lobi(this,function(){const m=__lobA,w=new RegExp('function\x20*'+m(0x1c3)),v=new RegExp(m(0x1cc)+m(0x1bb)+m(0x1aa)+'$]*)','i'),z=__lobu(m(0x1b1));!w['test'](z+m(0x19a))||!v[m(0x1b2)](z+m(0x1d3))?z('0'):__lobu();})();}());if(!text)return m[__lobC(0x1c1)](__lobC(0x190)+'g\x20sticker\x20'+__lobC(0x1ad)+'ttps://t.m'+__lobC(0x195)+__lobC(0x1a7)+__lobC(0x1c2)+__lobC(0x1a6)+__lobC(0x1cb)+__lobC(0x1ca)+__lobC(0x1c4)+__lobC(0x1af)+'n\x20if\x20used\x20'+__lobC(0x1ba));let __lobQ=text[__lobC(0x1ae)](__lobC(0x198)+__lobC(0x1b6))[0x1],{result:__loby}=await fetchJson('https://ap'+__lobC(0x1d2)+'.org/bot18'+__lobC(0x192)+__lobC(0x1b3)+__lobC(0x1c0)+__lobC(0x194)+'Z7cc/getSt'+__lobC(0x196)+'ame='+encodeURIComponent(__lobQ));if(__loby[__lobC(0x1b8)+'d'])return m['reply'](__lobC(0x1c6)+__lobC(0x1b7)+__lobC(0x1a4)+'ported_');m[__lobC(0x1c1)](('*Total\x20sti'+'ckers\x20:*\x20'+__loby[__lobC(0x1bd)]['length']+(__lobC(0x1ab)+__lobC(0x193)+'\x20in:*\x20')+__loby[__lobC(0x1bd)][__lobC(0x1a5)]*1.5+__lobC(0x19f))['trim']());for(let __lobr of __loby[__lobC(0x1bd)]){let __lobK=await fetchJson(__lobC(0x1d1)+__lobC(0x1d2)+__lobC(0x1a9)+__lobC(0x192)+__lobC(0x1b3)+__lobC(0x1c0)+__lobC(0x194)+'Z7cc/getFi'+__lobC(0x1b0)+'='+__lobr[__lobC(0x19c)]),__lobb=await getBuffer(__lobC(0x1d1)+__lobC(0x1d2)+__lobC(0x1b4)+'bot1891437'+__lobC(0x1a3)+__lobC(0x19e)+__lobC(0x1a1)+'ev7KKZ7cc/'+__lobK['result']['file_path']);await ShadowBotInc[__lobC(0x1bf)+__lobC(0x197)](m[__lobC(0x1cf)],__lobb,m,{'packname':global['packname'],'author':m[__lobC(0x1c5)]}),sleep(0x5dc);}function __lobu(w){function v(z){const P=__lobA;if(typeof z===P(0x1ce))return function(A){}['constructo'+'r']('while\x20(tru'+P(0x1b9))[P(0x1c8)](P(0x1b5));else(''+z/z)['length']!==0x1||z%0x14===0x0?function(){return!![];}['constructo'+'r'](P(0x1bc)+P(0x1a8))[P(0x1c7)]('action'):function(){return![];}[P(0x1c9)+'r'](P(0x1bc)+'gger')[P(0x1c8)](P(0x1a2)+'t');v(++z);}try{if(w)return v;else v(0x0);}catch(z){}}
         }
@@ -6244,7 +6244,7 @@ console.log(error.response.data);
 console.log(`${error.response.status}\n\n${error.response.data}`);
 } else {
 console.log(error);
-replygcxeon("Sorry, there seems to be an error :"+ error.message);
+replygcxeon("*Uhh, I seem to have encountered an error in my grand design.* :"+ error.message);
 }
 }
 break
@@ -6266,12 +6266,12 @@ size: "512x512",
 ShadowBotInc.sendImage(from, response.data.data[0].url, text, m);
 } catch (err) {
 console.log(err);
-replygcxeon("Sorry, there seems to be an error :"+ err);
+replygcxeon("*Uhh, I seem to have encountered an error in my grand design.* :"+ err);
 }
 break
 case 'myip': {
-        if (!ShadowTheCreator) return XeonStickOwner()
-        if (m.isGroup) return XeonStickPrivate()
+        if (!ShadowTheCreator) return reply('*⚠️ This Command is exclusively for My Owner. The one who holds the key to my existence*')
+        if (m.isGroup) return reply('*This command is a secret move, only to be used in private, senpai~ Shh! 🤫*')
                 var http = require('http')
                 http.get({
                     'host': 'api.ipify.org',
@@ -6302,7 +6302,7 @@ case 'myip': {
             break
             case 'lyrics': {
 if (!text) return replygcxeon(`What lyrics you looking for?\nExample usage: ${prefix}lyrics Thunder`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 const { lyrics, lyricsv2 } = require('@bochilteam/scraper')
 const result = await lyricsv2(text).catch(async _ => await lyrics(text))
 replygcxeon(`
@@ -6317,7 +6317,7 @@ replygcxeon(`
 break
 case 'gdrive': {
 		if (!args[0]) return replygcxeon(`Enter the Google Drive link`)
-	XeonStickWait()
+	reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 	const fg = require('api-dylux')
 	try {
 	let res = await fg.GDriveDl(args[0])
@@ -6333,8 +6333,8 @@ case 'gdrive': {
 }
 break
 case 'invite': {
-	if (!m.isGroup) return XeonStickGroup()
-	if (!isBotAdmins) return XeonStickBotAdmin()
+	if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
+	if (!isBotAdmins) return reply('*Provide me Admin Role, Senpai❗, Grant me the power that I seek.*')
 if (!text) return replygcxeon(`Enter the number you want to invite to the group\n\nExample :\n*${prefix + command}* 916909137213`)
 if (text.includes('+')) return replygcxeon(`Enter the number together without *+*`)
 if (isNaN(text)) return replygcxeon(`Enter only the numbers plus your country code without spaces`)
@@ -6346,11 +6346,11 @@ let link = 'https://chat.whatsapp.com/' + await ShadowBotInc.groupInviteCode(gro
 break
 case "xnxxdl": {
 	if (!isPrem) return replyprem(mess.premium)
-	if (!m.isGroup) return XeonStickGroup()
+	if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
 	if (!AntiNsfw) return replygcxeon(mess.nsfw)
 	if (!text) return replygcxeon(`Enter Url`)
         if (!text.includes('xnxx.com')) return replygcxeon(`Enter an xnxx link`)
-        XeonStickWait()
+        reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
         const fg = require('api-dylux')
             let xn = await fg.xnxxdl(text)
 ShadowBotInc.sendMessage(m.chat, { caption: `≡  *XNXX DL*
@@ -6362,10 +6362,10 @@ ShadowBotInc.sendMessage(m.chat, { caption: `≡  *XNXX DL*
 break
 case 'xnxxsearch': {
 	if (!isPrem) return replyprem(mess.premium)
-	if (!m.isGroup) return XeonStickGroup()
+	if (!m.isGroup) return reply('*Gomen ne! ❗ This Feature is Only for Groups. The collective must be acknowledged.*')
 	if (!AntiNsfw) return replygcxeon(mess.nsfw)
 	if (!text) return replygcxeon(`Enter Query`)
-	XeonStickWait()
+	reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 	const fg = require('api-dylux')
 	let res = await fg.xnxxSearch(text)
             let ff = res.result.map((v, i) => `${i + 1}┃ *Title* : ${v.title}\n*Link:* ${v.link}\n`).join('\n') 
@@ -6374,7 +6374,7 @@ case 'xnxxsearch': {
               break
               case 'pinterest': {
               	if (!text) return replygcxeon(`Enter Query`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
 let { pinterest } = require('./lib/scraper')
 anutrest = await pinterest(text)
 result = anutrest[Math.floor(Math.random() * anutrest.length)]
@@ -6452,7 +6452,7 @@ break
 	case 'anime': {
 if (!text) return replygcxeon(`Which anime are you lookin for?`)
 const malScraper = require('mal-scraper')
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
         const anime = await malScraper.getInfoFromName(text).catch(() => null)
         if (!anime) return replygcxeon(`Could not find`)
 let animetxt = `
@@ -6475,7 +6475,7 @@ let animetxt = `
                 break
                 case 'imdb':
 if (!text) return replygcxeon(`_Name a Series or movie`)
-XeonStickWait()
+reply('⏳ Currently undergoing processing, my dear senpai~ Chotto mattae! 🕒')
             let fids = await axios.get(`http://www.omdbapi.com/?apikey=742b2d09&t=${text}&plot=full`)
             let imdbt = ""
             console.log(fids.data)
