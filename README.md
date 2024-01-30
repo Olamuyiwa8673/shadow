@@ -57,7 +57,9 @@ Konnichiwa Senpai, I am "Shadow" an Opensource WhatsApp bot made by <a href="htt
     <br>
 <a href='https://github.com/Cipher0071/shadow/fork' target="_blank"><img alt='Fork repo' src='https://img.shields.io/badge/Fork Repo-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
 
-
+   2. get creds.json file either by qr or paircode
+    <br>
+<a href='https://session-lohs.onrender.com/' target="_blank"><img alt='CLICK HERE' src='https://img.shields.io/badge/CLICK HERE-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
 
  3. Upload creds.json file to session folder
     <br>
