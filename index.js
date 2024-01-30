@@ -30,6 +30,7 @@ const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, awa
 
 const prefix = ''
 
+
 global.db = JSON.parse(fs.readFileSync('./lib/database/database.json'))
 if (global.db) global.db = {
 sticker: {},
@@ -45,6 +46,14 @@ settings: {},
 const owner = JSON.parse(fs.readFileSync('./lib/database/owner.json'))
 
 const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream: 'store' }) })
+
+
+//========================================================================[SERVER]===================================================================//
+const express = require("express");
+const app = express();
+const PORT = 6798;
+const { join } = require("path");
+//====================================================================================================================================================//
 
 require('./shadow.js')
 nocache('../shadow.js', module => console.log(color('[ CHANGE ]', 'green'), color(`'${module}'`, 'green'), 'Updated'))
@@ -736,3 +745,11 @@ ShadowBotIncBot()
 process.on('uncaughtException', function (err) {
 console.log('Caught exception: ', err)
 })
+
+//========================================================[SERVER]==================================================================//
+app.use("/", express.static(join(__dirname, "src")));
+
+app.listen(PORT, () => {
+  console.log(`Server is listening on port ${PORT}`);
+});
+//===================================================================================================================================//
