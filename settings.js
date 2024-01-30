@@ -21,27 +21,27 @@ global.doc5 = 'application/pdf'
 global.doc6 = 'application/vnd.android.package-archive'
 
 //owmner v card
-global.owner = ['2349150690169'] //ur owner number
-global.ownernomer = "2349150690169" //ur owner number2
-global.ownername = "Cipher" //ur owner name
+global.owner = ['2349010895477'] //ur owner number
+global.ownernomer = "2349010895477" //ur owner number2
+global.ownername = "𝑪𝑨𝑳𝑳 𝑴𝑯𝑬 𝑩𝑼𝑴𝑩𝑼𝑴" //ur owner name
 global.ytname = "Not on youtube!!" //ur yt chanel name
-global.socialm = "GitHub: Cipher0071" //ur github or insta name
+global.socialm = "GitHub: olamuyiwa8673" //ur github or insta name
 global.location = "Nigeria, Edo, Benin city" //ur location
 
 //new
-global.botname = "Shadow"
-global.ownernumber = '2349150690169'
-global.ownername = 'Cipher'
-global.ownerNumber = ["2349150690169@s.whatsapp.net"]
+global.botname = "𝑪𝑨𝑳𝑳 𝑴𝑯𝑬 𝑩𝑼𝑴𝑩𝑼𝑴"
+global.ownernumber = '2349010895477'
+global.ownername = '𝑪𝑨𝑳𝑳 𝑴𝑯𝑬 𝑩𝑼𝑴𝑩𝑼𝑴'
+global.ownerNumber = ["2349010895477@s.whatsapp.net"]
 global.ownerweb = "https://github.com/Cipher0071"
 global.websitex = "https://github.com/Cipher0071"
-global.wagc = "https://chat.whatsapp.com/FCfSLTySyqz1c7YPJD2KSm"
+global.wagc = "https://chat.whatsapp.com/HQ26izcpZ7yAWXm2yyExSX"
 global.themeemoji = '🪀'
 global.wm = "Shadow Bot Inc."
 global.botscript = 'https://github.com/Cipher0071/shadow' //script link
 global.packname = "Sticker By"
-global.author = "Cipher\n\n"
-global.creator = "2349150690169@s.whatsapp.net"
+global.author = "🤪𝑪𝑨𝑳𝑳 𝑴𝑯𝑬 𝑩𝑼𝑴𝑩𝑼𝑴🤪\n\n"
+global.creator = "2349010895477@s.whatsapp.net"
 global.prefa = ['#']
 global.sessionName = 'session'
 global.hituet = 0
