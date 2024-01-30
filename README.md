@@ -1,9 +1,9 @@
 <p align="center">
-<a href="https://github.com/Cipher0071/SHADOW-MD">
-    <img src="https://github.com/Cipher0071/SHADOW-MD/blob/main/Assets/shadow.jpg">
+<a href="https://github.com/Cipher0071/SHADOW">
+    <img src="https://github.com/Cipher0071/shadow/blob/master/Assets/Media2/theme/Cid%20Kagenou.jpg">
   </a>
 
-<h1 align="center"> SHADOW-MD
+<h1 align="center"> SHADOW
 </h1>
 
 
@@ -28,21 +28,21 @@
 <p align="center"> 
 Konnichiwa Senpai, I am "Shadow" an Opensource WhatsApp bot made by <a href="https://github.com/DGXeon">DGXeon</a> and recoded by <a href="https://github.com/Cipher0071">Cipher</a> to do everything that's beyond imagination with highest <b>Features</b> and <b>Stability</b> and <b>Compatibility</b> built with Baileys Multi Device support.
 
-<h3 align="center"> SHADOW-MD - Embracing Endless Possibilities
+<h3 align="center"> SHADOW - Embracing Endless Possibilities
 </h4>
 
 <br>
 
  <p align="center">
-  <a href="https://github.com/Cipher0071/SHADOW-MD/fork">
-    <img src="https://img.shields.io/github/forks/Cipher0071/SHADOW-MD?label=Fork&style=social">
+  <a href="https://github.com/Cipher0071/shadow/fork">
+    <img src="https://img.shields.io/github/forks/Cipher0071/shadow?label=Fork&style=social">
     
     
-  <a href="https://github.com/Cipher0071/SHADOW-MD/stargazers">
-    <img src="https://img.shields.io/github/stars/Cipher0071/SHADOW-MD?style=social">
+  <a href="https://github.com/Cipher0071/shadow/stargazers">
+    <img src="https://img.shields.io/github/stars/Cipher0071/shadow?style=social">
   </a>
 <p align="center">
-<a href="[https://github.com/Cipher0071/SHADOW-MD](https://github.com/Cipher0071/SHADOW-MD)"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FCipher0071%2FSHADOW-MD&count_bg=%23FFA305&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=People+Visited&edge_flat=false)](https://hits.seeyoufarm.com" width="150px" /></a>
+<a href="[https://github.com/Cipher0071/shadow](https://github.com/Cipher0071/shadow)"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FCipher0071%2Fshadow&count_bg=%23FFA305&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=People+Visited&edge_flat=false)](https://hits.seeyoufarm.com" width="150px" /></a>
 </p>
   
    
@@ -55,7 +55,7 @@ Konnichiwa Senpai, I am "Shadow" an Opensource WhatsApp bot made by <a href="htt
    
    1. Fork the repo
     <br>
-<a href='https://github.com/Cipher0071/SHADOW-MD/fork' target="_blank"><img alt='Fork repo' src='https://img.shields.io/badge/Fork Repo-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
+<a href='https://github.com/Cipher0071/shadow/fork' target="_blank"><img alt='Fork repo' src='https://img.shields.io/badge/Fork Repo-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
 
 
 
